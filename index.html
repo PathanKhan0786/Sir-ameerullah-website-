@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fluent Future English Academy</title>
+
 <style>
   :root{
     --navy:#082546;
@@ -14,185 +15,559 @@
     --light:#f6f8fb;
     --white:#fff;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+
+  *{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+  }
+
+  html{
+    scroll-behavior:smooth
+  }
+
   body{
     font-family:Arial,Helvetica,sans-serif;
     color:var(--text);
     background:#fff;
     line-height:1.65;
   }
-  a{text-decoration:none;color:inherit}
+
+  a{
+    text-decoration:none;
+    color:inherit
+  }
+
   .topbar{
-    position:sticky;top:0;z-index:20;
+    position:sticky;
+    top:0;
+    z-index:20;
     background:var(--navy);
     color:#fff;
     padding:16px 22px 14px;
     box-shadow:0 2px 12px rgba(0,0,0,.12);
   }
+
   .brand{
-    max-width:1100px;margin:auto;
-    display:flex;align-items:center;gap:14px;
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:14px;
   }
+
   .logo{
-    width:52px;height:52px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    background:#fff;color:var(--navy);
-    font-weight:900;font-size:21px;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    color:var(--navy);
+    font-weight:900;
+    font-size:21px;
     border:3px solid var(--gold);
   }
+
   .brand h1{
     font-family:Georgia,serif;
-    font-size:27px;line-height:1.05;
+    font-size:27px;
+    line-height:1.05;
     letter-spacing:.4px;
   }
+
   .brand p{
-    color:#e5c45d;font-size:13px;
-    letter-spacing:2px;margin-top:5px;
+    color:#e5c45d;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-top:5px;
   }
-  section{padding:78px 20px}
-  .container{max-width:1100px;margin:auto}
+
+  section{
+    padding:78px 20px
+  }
+
+  .container{
+    max-width:1100px;
+    margin:auto
+  }
+
   .hero{
     min-height:680px;
-    display:flex;align-items:center;
+    display:flex;
+    align-items:center;
     background:linear-gradient(135deg,#fff 0%,#fff 55%,#f7f9fc 100%);
   }
+
   .hero-grid{
-    display:grid;grid-template-columns:1.05fr .95fr;
-    gap:50px;align-items:center;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:50px;
+    align-items:center;
   }
+
   .eyebrow,.section-label{
-    color:#c79a28;font-weight:800;
-    letter-spacing:3px;text-transform:uppercase;
+    color:#c79a28;
+    font-weight:800;
+    letter-spacing:3px;
+    text-transform:uppercase;
     font-size:16px;
   }
+
   .script{
-    color:#c79a28;font-family:cursive;
-    font-size:42px;margin-bottom:4px;
+    color:#c79a28;
+    font-family:cursive;
+    font-size:42px;
+    margin-bottom:4px;
   }
+
   .hero h2,.section-title{
     font-family:Georgia,serif;
-    font-weight:700;color:var(--navy);
+    font-weight:700;
+    color:var(--navy);
   }
-  .hero h2{font-size:64px;line-height:1.05;margin-bottom:25px}
-  .hero p{font-size:21px;color:#26374d;max-width:650px;margin-bottom:30px}
-  .buttons{display:flex;gap:16px;flex-wrap:wrap}
+
+  .hero h2{
+    font-size:64px;
+    line-height:1.05;
+    margin-bottom:25px
+  }
+
+  .hero p{
+    font-size:21px;
+    color:#26374d;
+    max-width:650px;
+    margin-bottom:30px
+  }
+
+  .buttons{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap
+  }
+
   .btn{
-    display:inline-block;padding:15px 25px;border-radius:10px;
-    font-weight:800;font-size:17px;transition:.2s;
+    display:inline-block;
+    padding:15px 25px;
+    border-radius:10px;
+    font-weight:800;
+    font-size:17px;
+    transition:.2s;
   }
-  .btn:hover{transform:translateY(-2px)}
-  .btn-dark{background:var(--navy);color:#fff}
-  .btn-gold{background:var(--gold);color:#071d35}
+
+  .btn:hover{
+    transform:translateY(-2px)
+  }
+
+  .btn-dark{
+    background:var(--navy);
+    color:#fff
+  }
+
+  .btn-gold{
+    background:var(--gold);
+    color:#071d35
+  }
+
   .hero-card{
-    background:var(--navy);border-radius:28px;padding:42px;color:#fff;
+    background:var(--navy);
+    border-radius:28px;
+    padding:42px;
+    color:#fff;
     box-shadow:0 18px 50px rgba(8,37,70,.2);
   }
-  .hero-card .big-icon{font-size:80px;margin-bottom:15px}
-  .hero-card h3{font-family:Georgia,serif;font-size:32px;margin-bottom:10px}
-  .hero-card p{color:#d9e4f2;font-size:18px}
+
+  .hero-card .big-icon{
+    font-size:80px;
+    margin-bottom:15px
+  }
+
+  .hero-card h3{
+    font-family:Georgia,serif;
+    font-size:32px;
+    margin-bottom:10px
+  }
+
+  .hero-card p{
+    color:#d9e4f2;
+    font-size:18px
+  }
+
   .stats{
-    display:grid;grid-template-columns:repeat(4,1fr);
-    gap:18px;margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-top:40px;
   }
+
   .stat{
-    border:1px solid #e1e5ea;border-radius:18px;padding:25px;background:#fff;
+    border:1px solid #e1e5ea;
+    border-radius:18px;
+    padding:25px;
+    background:#fff;
   }
-  .stat strong{display:block;font-family:Georgia,serif;font-size:45px;color:var(--navy)}
-  .stat span{color:var(--muted);font-size:16px}
-  .about{background:#fff}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-  .section-title{font-size:58px;line-height:1.1;margin:10px 0 25px}
-  .about p{font-size:19px;color:var(--muted)}
+
+  .stat strong{
+    display:block;
+    font-family:Georgia,serif;
+    font-size:45px;
+    color:var(--navy)
+  }
+
+  .stat span{
+    color:var(--muted);
+    font-size:16px
+  }
+
+  .about{
+    background:#fff
+  }
+
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center
+  }
+
+  .section-title{
+    font-size:58px;
+    line-height:1.1;
+    margin:10px 0 25px
+  }
+
+  .about p{
+    font-size:19px;
+    color:var(--muted)
+  }
+
   .mission{
-    background:var(--light);border-left:7px solid var(--gold);
-    border-radius:0 25px 25px 0;padding:40px;
+    background:var(--light);
+    border-left:7px solid var(--gold);
+    border-radius:0 25px 25px 0;
+    padding:40px;
   }
-  .mission h3{font-size:32px;margin-bottom:15px}
-  .mission p{font-size:19px;color:#334155}
-  .features{padding-top:20px}
-  .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+
+  .mission h3{
+    font-size:32px;
+    margin-bottom:15px
+  }
+
+  .mission p{
+    font-size:19px;
+    color:#334155
+  }
+
+  .features{
+    padding-top:20px
+  }
+
+  .feature-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px
+  }
+
   .feature{
-    display:flex;gap:18px;align-items:center;padding:18px 10px;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    padding:18px 10px;
   }
+
   .feature-icon{
-    min-width:64px;height:64px;border-radius:50%;
-    background:var(--navy);display:flex;align-items:center;justify-content:center;
+    min-width:64px;
+    height:64px;
+    border-radius:50%;
+    background:var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
     font-size:30px;
   }
-  .feature h3{font-size:22px}.feature p{color:var(--muted)}
-  .courses{background:var(--navy);color:#fff}
-  .courses .section-title{color:#fff;text-align:center}
-  .courses .section-label{text-align:center;display:block}
-  .intro{text-align:center;color:#c8d4e4;max-width:720px;margin:0 auto 40px;font-size:19px}
-  .course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .course{
-    background:#143e6c;border:1px solid #4a6b8f;border-radius:18px;
-    padding:30px;min-height:245px;
+
+  .feature h3{
+    font-size:22px
   }
-  .course .icon{font-size:45px;margin-bottom:12px}
-  .course h3{font-size:25px;margin-bottom:10px}
-  .course p{color:#d1dbea;margin-bottom:22px}
-  .learn{color:#f1c84b;font-weight:800;font-size:17px}
-  .teachers{background:#f7f8fb}
-  .teacher-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+
+  .feature p{
+    color:var(--muted)
+  }
+
+  .courses{
+    background:var(--navy);
+    color:#fff
+  }
+
+  .courses .section-title{
+    color:#fff;
+    text-align:center
+  }
+
+  .courses .section-label{
+    text-align:center;
+    display:block
+  }
+
+  .intro{
+    text-align:center;
+    color:#c8d4e4;
+    max-width:720px;
+    margin:0 auto 40px;
+    font-size:19px;
+  }
+
+  .course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px
+  }
+
+  .course{
+    background:#143e6c;
+    border:1px solid #4a6b8f;
+    border-radius:18px;
+    padding:30px;
+    min-height:245px;
+  }
+
+  .course .icon{
+    font-size:45px;
+    margin-bottom:12px
+  }
+
+  .course h3{
+    font-size:25px;
+    margin-bottom:10px
+  }
+
+  .course p{
+    color:#d1dbea;
+    margin-bottom:22px
+  }
+
+  .learn{
+    color:#f1c84b;
+    font-weight:800;
+    font-size:17px
+  }
+
+  .teachers{
+    background:#f7f8fb
+  }
+
+  .teacher-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px
+  }
+
   .teacher{
-    background:#fff;border-radius:22px;padding:38px;text-align:center;
+    background:#fff;
+    border-radius:22px;
+    padding:38px;
+    text-align:center;
     box-shadow:0 7px 25px rgba(12,34,56,.06);
   }
+
   .teacher-avatar{
-    width:125px;height:125px;border-radius:50%;
-    background:var(--navy);display:flex;align-items:center;justify-content:center;
-    margin:0 auto 20px;font-size:65px;
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    background:var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 20px;
+    font-size:65px;
   }
-  .teacher h3{font-size:28px;margin-bottom:5px}
-  .teacher .role{color:#718096;font-size:18px;margin-bottom:15px}
-  .teacher .bio{color:#697586;font-size:16px}
+
+  .teacher h3{
+    font-size:28px;
+    margin-bottom:5px
+  }
+
+  .teacher .role{
+    color:#718096;
+    font-size:18px;
+    margin-bottom:15px
+  }
+
+  .teacher .bio{
+    color:#697586;
+    font-size:16px
+  }
+
   .contact{
     background:linear-gradient(135deg,var(--navy),#0d355c);
     color:#fff;
   }
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start}
-  .contact h2{font-family:Georgia,serif;font-size:55px;line-height:1.1;margin:10px 0 20px}
-  .contact-info{color:#d5e1ef;font-size:18px}
-  .contact-info div{margin:13px 0}
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:start
+  }
+
+  .contact h2{
+    font-family:Georgia,serif;
+    font-size:55px;
+    line-height:1.1;
+    margin:10px 0 20px
+  }
+
+  .contact-info{
+    color:#d5e1ef;
+    font-size:18px
+  }
+
+  .contact-info div{
+    margin:13px 0
+  }
+
   .form{
-    background:#fff;color:var(--text);border-radius:22px;padding:32px;
+    background:#fff;
+    color:var(--text);
+    border-radius:22px;
+    padding:32px;
   }
-  label{display:block;font-size:17px;margin:0 0 8px}
+
+  label{
+    display:block;
+    font-size:17px;
+    margin:0 0 8px
+  }
+
   input,textarea{
-    width:100%;padding:15px 16px;border:1px solid #d9dee5;
-    border-radius:12px;font-size:16px;margin-bottom:18px;outline:none;
+    width:100%;
+    padding:15px 16px;
+    border:1px solid #d9dee5;
+    border-radius:12px;
+    font-size:16px;
+    margin-bottom:18px;
+    outline:none;
   }
-  textarea{min-height:130px;resize:vertical}
-  .send{width:100%;border:0;cursor:pointer}
-  footer{background:#041a31;color:#fff;text-align:center;padding:32px 20px}
-  footer strong{font-size:20px}
-  footer p{color:#b9c6d5;margin-top:7px}
+
+  input:focus,textarea:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(217,165,43,.15);
+  }
+
+  textarea{
+    min-height:130px;
+    resize:vertical
+  }
+
+  .send{
+    width:100%;
+    border:0;
+    cursor:pointer
+  }
+
+  .btn-call{
+    display:inline-block;
+    margin-top:15px;
+    background:var(--gold);
+    color:#071d35;
+  }
+
+  footer{
+    background:#041a31;
+    color:#fff;
+    text-align:center;
+    padding:32px 20px
+  }
+
+  footer strong{
+    font-size:20px
+  }
+
+  footer p{
+    color:#b9c6d5;
+    margin-top:7px
+  }
+
   @media(max-width:800px){
-    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-    .hero{min-height:auto;padding-top:65px}
-    .hero h2{font-size:48px}
-    .section-title{font-size:44px}
-    .stats{grid-template-columns:1fr 1fr}
-    .course-grid{grid-template-columns:1fr}
-    .teacher-grid{grid-template-columns:1fr}
-    .feature-list{grid-template-columns:1fr}
-    .hero-card{display:none}
+    .hero-grid,.about-grid,.contact-grid{
+      grid-template-columns:1fr
+    }
+
+    .hero{
+      min-height:auto;
+      padding-top:65px
+    }
+
+    .hero h2{
+      font-size:48px
+    }
+
+    .section-title{
+      font-size:44px
+    }
+
+    .stats{
+      grid-template-columns:1fr 1fr
+    }
+
+    .course-grid{
+      grid-template-columns:1fr
+    }
+
+    .teacher-grid{
+      grid-template-columns:1fr
+    }
+
+    .feature-list{
+      grid-template-columns:1fr
+    }
+
+    .hero-card{
+      display:none
+    }
   }
+
   @media(max-width:480px){
-    .brand h1{font-size:21px}
-    .brand p{font-size:10px}
-    section{padding:60px 18px}
-    .hero h2{font-size:43px}
-    .script{font-size:35px}
-    .hero p{font-size:18px}
-    .stats{grid-template-columns:1fr 1fr}
-    .stat{padding:18px}
-    .stat strong{font-size:34px}
+    .brand h1{
+      font-size:21px
+    }
+
+    .brand p{
+      font-size:10px
+    }
+
+    section{
+      padding:60px 18px
+    }
+
+    .hero h2{
+      font-size:43px
+    }
+
+    .script{
+      font-size:35px
+    }
+
+    .hero p{
+      font-size:18px
+    }
+
+    .stats{
+      grid-template-columns:1fr 1fr
+    }
+
+    .stat{
+      padding:18px
+    }
+
+    .stat strong{
+      font-size:34px
+    }
   }
 </style>
 </head>
+
 <body>
 
 <header class="topbar">
@@ -211,11 +586,13 @@
       <div class="script">Welcome to</div>
       <h2>Fluent Future<br>English Academy</h2>
       <p>Build strong English skills for a brighter future. Speak with confidence, learn with passion, and grow every day.</p>
+
       <div class="buttons">
         <a class="btn btn-dark" href="#courses">Explore Courses →</a>
         <a class="btn btn-gold" href="#contact">Contact Us →</a>
       </div>
     </div>
+
     <div class="hero-card">
       <div class="big-icon">🎓</div>
       <h3>Learn English With Confidence</h3>
@@ -226,123 +603,348 @@
 
 <section class="about" id="about">
   <div class="container">
+
     <div class="about-grid">
+
       <div>
         <span class="section-label">WHO WE ARE</span>
+
         <h2 class="section-title">About Fluent Future</h2>
-        <p>Fluent Future English Academy is dedicated to helping learners improve their English communication, confidence and academic skills. Our goal is to create a friendly learning environment where every student can progress.</p>
+
+        <p>
+          Fluent Future English Academy is dedicated to helping learners improve their English communication, confidence and academic skills. Our goal is to create a friendly learning environment where every student can progress.
+        </p>
+
         <div class="stats">
-          <div class="stat"><strong>1200+</strong><span>Students Enrolled</span></div>
-          <div class="stat"><strong>15+</strong><span>Expert Teachers</span></div>
-          <div class="stat"><strong>25+</strong><span>Courses & Classes</span></div>
-          <div class="stat"><strong>10+</strong><span>Countries Reached</span></div>
+
+          <div class="stat">
+            <strong>1200+</strong>
+            <span>Students Enrolled</span>
+          </div>
+
+          <div class="stat">
+            <strong>15+</strong>
+            <span>Expert Teachers</span>
+          </div>
+
+          <div class="stat">
+            <strong>25+</strong>
+            <span>Courses & Classes</span>
+          </div>
+
+          <div class="stat">
+            <strong>10+</strong>
+            <span>Countries Reached</span>
+          </div>
+
         </div>
       </div>
+
       <div class="mission">
         <h3>Our Mission</h3>
-        <p>To make quality English education simple, practical and accessible — helping students speak clearly, write confidently and prepare for future opportunities.</p>
+
+        <p>
+          To make quality English education simple, practical and accessible — helping students speak clearly, write confidently and prepare for future opportunities.
+        </p>
+
         <br>
+
         <a class="btn btn-dark" href="#contact">Start Learning</a>
       </div>
+
     </div>
   </div>
 </section>
 
 <section class="features">
   <div class="container">
+
     <div class="feature-list">
-      <div class="feature"><div class="feature-icon">👨‍🏫</div><div><h3>Expert Teachers</h3><p>Qualified & experienced</p></div></div>
-      <div class="feature"><div class="feature-icon">📖</div><div><h3>Quality Education</h3><p>Practical learning</p></div></div>
-      <div class="feature"><div class="feature-icon">🎧</div><div><h3>Personal Support</h3><p>Guidance every step</p></div></div>
-      <div class="feature"><div class="feature-icon">🏆</div><div><h3>Certificates</h3><p>Achieve your goals</p></div></div>
+
+      <div class="feature">
+        <div class="feature-icon">👨‍🏫</div>
+        <div>
+          <h3>Expert Teachers</h3>
+          <p>Qualified & experienced</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📖</div>
+        <div>
+          <h3>Quality Education</h3>
+          <p>Practical learning</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🎧</div>
+        <div>
+          <h3>Personal Support</h3>
+          <p>Guidance every step</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🏆</div>
+        <div>
+          <h3>Certificates</h3>
+          <p>Achieve your goals</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <section class="courses" id="courses">
   <div class="container">
+
     <span class="section-label">WHAT WE TEACH</span>
+
     <h2 class="section-title">Our Courses</h2>
-    <p class="intro">Simple, practical and confidence-building English programs for students and professionals.</p>
+
+    <p class="intro">
+      Simple, practical and confidence-building English programs for students and professionals.
+    </p>
+
     <div class="course-grid">
-      <div class="course"><div class="icon">🗣️</div><h3>Spoken English</h3><p>Speak naturally and confidently in everyday conversations.</p><a class="learn" href="#contact">Learn More →</a></div>
-      <div class="course"><div class="icon">✍️</div><h3>Grammar Course</h3><p>Master grammar through easy explanations and practice.</p><a class="learn" href="#contact">Learn More →</a></div>
-      <div class="course"><div class="icon">📚</div><h3>Vocabulary Building</h3><p>Build useful vocabulary for confident speaking and writing.</p><a class="learn" href="#contact">Learn More →</a></div>
-      <div class="course"><div class="icon">🎯</div><h3>IELTS Preparation</h3><p>Focused preparation for listening, reading, writing and speaking.</p><a class="learn" href="#contact">Learn More →</a></div>
-      <div class="course"><div class="icon">💼</div><h3>Professional English</h3><p>Improve communication for study, work and professional life.</p><a class="learn" href="#contact">Learn More →</a></div>
-      <div class="course"><div class="icon">🎓</div><h3>Academic English</h3><p>Strengthen English skills for academic success and confidence.</p><a class="learn" href="#contact">Learn More →</a></div>
+
+      <div class="course">
+        <div class="icon">🗣️</div>
+        <h3>Spoken English</h3>
+        <p>Speak naturally and confidently in everyday conversations.</p>
+        <a class="learn" href="#contact">Learn More →</a>
+      </div>
+
+      <div class="course">
+        <div class="icon">✍️</div>
+        <h3>Grammar Course</h3>
+        <p>Master grammar through easy explanations and practice.</p>
+        <a class="learn" href="#contact">Learn More →</a>
+      </div>
+
+      <div class="course">
+        <div class="icon">📚</div>
+        <h3>Vocabulary Building</h3>
+        <p>Build useful vocabulary for confident speaking and writing.</p>
+        <a class="learn" href="#contact">Learn More →</a>
+      </div>
+
+      <div class="course">
+        <div class="icon">🎯</div>
+        <h3>IELTS Preparation</h3>
+        <p>Focused preparation for listening, reading, writing and speaking.</p>
+        <a class="learn" href="#contact">Learn More →</a>
+      </div>
+
+      <div class="course">
+        <div class="icon">💼</div>
+        <h3>Professional English</h3>
+        <p>Improve communication for study, work and professional life.</p>
+        <a class="learn" href="#contact">Learn More →</a>
+      </div>
+
+      <div class="course">
+        <div class="icon">🎓</div>
+        <h3>Academic English</h3>
+        <p>Strengthen English skills for academic success and confidence.</p>
+        <a class="learn" href="#contact">Learn More →</a>
+      </div>
+
     </div>
   </div>
 </section>
 
 <section class="teachers" id="teachers">
   <div class="container">
+
     <span class="section-label">MEET THE TEACHER</span>
+
     <h2 class="section-title">Our Teacher</h2>
-    <p class="intro" style="color:#697586">Professional guidance, practical teaching and personal attention for every learner.</p>
+
+    <p class="intro" style="color:#697586">
+      Professional guidance, practical teaching and personal attention for every learner.
+    </p>
+
     <div class="teacher-grid">
+
       <div class="teacher">
+
         <div class="teacher-avatar">👨‍🏫</div>
+
         <h3>Sir Amirullah</h3>
-        <div class="role">English Language Specialist</div>
-        <p class="bio">Sir Amirullah teaches English in a professional, friendly and easy-to-understand way. He focuses on practical speaking, clear grammar, useful vocabulary and confidence-building practice. His supportive teaching style helps students learn comfortably and improve step by step.</p>
+
+        <div class="role">
+          English Language Specialist
+        </div>
+
+        <p class="bio">
+          Sir Amirullah teaches English in a professional, friendly and easy-to-understand way. He focuses on practical speaking, clear grammar, useful vocabulary and confidence-building practice. His supportive teaching style helps students learn comfortably and improve step by step.
+        </p>
+
       </div>
+
       <div class="teacher">
+
         <div class="teacher-avatar">📘</div>
+
         <h3>Sir Amirullah</h3>
-        <div class="role">Spoken English & Grammar</div>
-        <p class="bio">With a student-focused approach, Sir Amirullah explains difficult concepts in simple language and encourages learners to practise regularly. His aim is to help every student communicate clearly, confidently and naturally.</p>
+
+        <div class="role">
+          Spoken English & Grammar
+        </div>
+
+        <p class="bio">
+          With a student-focused approach, Sir Amirullah explains difficult concepts in simple language and encourages learners to practise regularly. His aim is to help every student communicate clearly, confidently and naturally.
+        </p>
+
       </div>
+
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
+
   <div class="container contact-grid">
+
     <div>
+
       <span class="section-label">GET IN TOUCH</span>
+
       <h2>Start Your<br>English Journey</h2>
-      <p class="contact-info">Ready to improve your English? Send your details and the academy can contact you about courses, fees and class timings.</p>
+
+      <p class="contact-info">
+        Ready to improve your English? Send your details and the academy can contact you about courses, fees and class timings.
+      </p>
+
       <div class="contact-info" style="margin-top:24px">
-        <div><strong>Phone:</strong> +923165537432 </div>
-        <div><strong>Email:</strong> info@fluentfutureacademy.com</div>
-        <div><strong>Location:</strong>Karachi, Pakistan</div>
+
+        <div>
+          <strong>Phone:</strong> +923165537432
+        </div>
+
+        <div>
+          <strong>Email:</strong> info@fluentfutureacademy.com
+        </div>
+
+        <div>
+          <strong>Location:</strong> Karachi, Pakistan
+        </div>
+
       </div>
+
+      <a href="tel:+923165537432" class="btn btn-call">
+        📞 Call Now
+      </a>
+
     </div>
-    <form class="form" onsubmit="sendEnquiry(event)">
-      <label>Name</label>
-      <input id="name" type="text" placeholder="Your name" required>
-      <label>Phone / WhatsApp</label>
-      <input id="phone" type="tel" placeholder="+92..." required>
-      <label>Course</label>
-      <input id="course" type="text" placeholder="Spoken English / IELTS / Grammar">
-      <label>Message</label>
-      <textarea id="message" placeholder="Tell us what you want to learn"></textarea>
-      <button class="btn btn-gold send" type="submit">Send Enquiry</button>
-    </form><a href="tel:+923165537432" class="btn btn-call">📞 Call Now</a>
+
+    <form class="form" id="enquiryForm">
+
+      <label for="name">Name</label>
+
+      <input
+        id="name"
+        type="text"
+        placeholder="Your name"
+        required
+      >
+
+      <label for="phone">Phone / WhatsApp</label>
+
+      <input
+        id="phone"
+        type="tel"
+        placeholder="+92..."
+        required
+      >
+
+      <label for="course">Course</label>
+
+      <input
+        id="course"
+        type="text"
+        placeholder="Spoken English / IELTS / Grammar"
+      >
+
+      <label for="message">Message</label>
+
+      <textarea
+        id="message"
+        placeholder="Tell us what you want to learn"
+      ></textarea>
+
+      <button
+        class="btn btn-gold send"
+        type="submit"
+      >
+        Send Enquiry
+      </button>
+
+    </form>
+
   </div>
+
 </section>
 
 <footer>
+
   <strong>Fluent Future English Academy</strong>
+
   <p>Learn Today · Lead Tomorrow</p>
-  <p>© 2026 Fluent Future English Academy. All rights reserved.</p>
+
+  <p>
+    © 2026 Fluent Future English Academy. All rights reserved.
+  </p>
+
 </footer>
 
 <script>
-function sendEnquiry(e){
-  e.preventDefault();
-  const name=document.getElementById('name').value.trim();
-  const phone=document.getElementById('phone').value.trim();
-  const course=document.getElementById('course').value.trim();
-  const message=document.getElementById('message').value.trim();
-  const text =
-    "Assalamualaikum, I want to enquire about Fluent Future English Academy.%0A%0A" +
-    "Name: " + encodeURIComponent(name) + "%0A" +
-    "Phone: " + encodeURIComponent(phone) + "%0A" +
-    "Course: " + encodeURIComponent(course) + "%0A" +
-    "Message: " + encodeURIComponent(message);
-  window.location.href="https://wa.me/923165537432?text="+text;
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("enquiryForm");
+
+  form.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const course = document.getElementById("course").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !phone) {
+      alert("Please enter your name and phone number.");
+      return;
+    }
+
+    const whatsappMessage =
+      "Assalamualaikum, I want to enquire about Fluent Future English Academy." +
+      "\n\n" +
+      "Name: " + name +
+      "\n" +
+      "Phone: " + phone +
+      "\n" +
+      "Course: " + (course || "Not specified") +
+      "\n" +
+      "Message: " + (message || "No message");
+
+    const whatsappNumber = "923165537432";
+
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(whatsappMessage);
+
+    window.location.assign(whatsappURL);
+
+  });
+
+});
 </script>
+
 </body>
-</html>
+  </html>
