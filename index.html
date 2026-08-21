@@ -6,16 +6,9 @@
 
 <title>Fluent Future English Academy | Learn Today · Lead Tomorrow</title>
 
-<meta name="description" content="Fluent Future English Academy helps students build confidence in spoken English, grammar, vocabulary, IELTS and professional communication.">
+<meta name="description" content="Fluent Future English Academy helps students improve spoken English, grammar, vocabulary, IELTS and professional communication.">
 
 <style>
-
-/* =========================================================
-   FLUENT FUTURE ENGLISH ACADEMY
-   PREMIUM ANIMATED VERSION
-   NO EXTERNAL LIBRARIES
-   ========================================================= */
-
 :root{
   --navy:#061b35;
   --navy2:#0b3158;
@@ -63,11 +56,9 @@ textarea{
   font:inherit;
 }
 
-/* =========================================================
+/* =========================
    LOADER
-   IMPORTANT:
-   JS BELOW FORCES IT TO CLOSE AFTER MAX 2.5 SECONDS
-   ========================================================= */
+   ========================= */
 
 .loader{
   position:fixed;
@@ -81,7 +72,7 @@ textarea{
   justify-content:center;
   opacity:1;
   visibility:visible;
-  transition:opacity .6s ease,visibility .6s ease;
+  transition:opacity .45s ease,visibility .45s ease;
 }
 
 .loader.hide{
@@ -106,13 +97,12 @@ textarea{
   font-family:Georgia,serif;
   font-size:26px;
   font-weight:900;
-  animation:
-    loaderPulse 1.4s infinite,
-    loaderRotate 5s linear infinite;
-  box-shadow:0 0 30px rgba(217,165,43,.12);
+  box-shadow:0 0 35px rgba(217,165,43,.18);
+  animation:loaderPulse 1.5s ease-in-out infinite;
 }
 
 .loader-box span{
+  display:block;
   color:var(--gold2);
   font-size:12px;
   letter-spacing:4px;
@@ -125,62 +115,37 @@ textarea{
   background:rgba(255,255,255,.15);
   margin:18px auto 0;
   overflow:hidden;
-  border-radius:10px;
+  border-radius:20px;
 }
 
-.loader-line:after{
+.loader-line::after{
   content:"";
   display:block;
-  width:45%;
+  width:55%;
   height:100%;
-  background:linear-gradient(
-    90deg,
-    var(--gold),
-    var(--gold2),
-    var(--gold)
-  );
-  animation:loading 1s infinite;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  animation:loading 1s ease-in-out infinite;
 }
 
 @keyframes loaderPulse{
-  0%,100%{
-    transform:scale(1);
-    box-shadow:0 0 0 rgba(217,165,43,0);
-  }
-
   50%{
     transform:scale(1.08);
-    box-shadow:0 0 35px rgba(217,165,43,.35);
-  }
-}
-
-@keyframes loaderRotate{
-  from{
-    border-color:var(--gold);
-  }
-
-  50%{
-    border-color:var(--gold2);
-  }
-
-  to{
-    border-color:var(--gold);
+    box-shadow:0 0 45px rgba(217,165,43,.35);
   }
 }
 
 @keyframes loading{
   from{
-    transform:translateX(-150%);
+    transform:translateX(-130%);
   }
-
   to{
-    transform:translateX(350%);
+    transform:translateX(300%);
   }
 }
 
-/* =========================================================
-   BACKGROUND ORBS
-   ========================================================= */
+/* =========================
+   BACKGROUND
+   ========================= */
 
 .bg-orb{
   position:absolute;
@@ -193,33 +158,21 @@ textarea{
   width:300px;
   height:300px;
   background:rgba(217,165,43,.08);
-  top:80px;
+  top:60px;
   right:-130px;
-  animation:orbFloat 7s ease-in-out infinite;
 }
 
 .orb2{
   width:190px;
   height:190px;
   background:rgba(11,49,88,.06);
-  bottom:50px;
-  left:-90px;
-  animation:orbFloat 8s 1s ease-in-out infinite reverse;
+  bottom:30px;
+  left:-95px;
 }
 
-@keyframes orbFloat{
-  0%,100%{
-    transform:translate(0,0);
-  }
-
-  50%{
-    transform:translate(-20px,25px);
-  }
-}
-
-/* =========================================================
-   TOP BAR
-   ========================================================= */
+/* =========================
+   HEADER
+   ========================= */
 
 .topbar{
   position:sticky;
@@ -254,11 +207,11 @@ textarea{
   font-size:21px;
   border:3px solid var(--gold);
   box-shadow:0 0 0 5px rgba(217,165,43,.08);
-  transition:.4s ease;
+  transition:.35s ease;
 }
 
 .brand:hover .logo{
-  transform:rotate(-8deg) scale(1.08);
+  transform:rotate(-8deg) scale(1.06);
 }
 
 .brand h1{
@@ -275,9 +228,9 @@ textarea{
   margin-top:5px;
 }
 
-/* =========================================================
+/* =========================
    GENERAL
-   ========================================================= */
+   ========================= */
 
 section{
   padding:95px 20px;
@@ -305,16 +258,10 @@ section{
   margin:12px 0 24px;
 }
 
-/* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
-
 .reveal{
   opacity:0;
-  transform:translateY(45px);
-  transition:
-    opacity .8s ease,
-    transform .8s ease;
+  transform:translateY(35px);
+  transition:opacity .75s ease,transform .75s ease;
 }
 
 .reveal.show{
@@ -322,9 +269,9 @@ section{
   transform:translateY(0);
 }
 
-/* =========================================================
+/* =========================
    HERO
-   ========================================================= */
+   ========================= */
 
 .hero{
   min-height:720px;
@@ -332,17 +279,8 @@ section{
   align-items:center;
   overflow:hidden;
   background:
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(217,165,43,.13),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #fff 0%,
-      #fff 52%,
-      #f4f7fb 100%
-    );
+    radial-gradient(circle at 90% 20%,rgba(217,165,43,.13),transparent 30%),
+    linear-gradient(135deg,#fff 0%,#fff 52%,#f4f7fb 100%);
 }
 
 .hero-grid{
@@ -357,7 +295,7 @@ section{
   font-family:cursive;
   font-size:46px;
   margin-bottom:2px;
-  animation:fadeUp .9s ease both;
+  animation:fadeUp .8s ease both;
 }
 
 .hero h2{
@@ -366,7 +304,7 @@ section{
   font-size:clamp(48px,6vw,76px);
   line-height:1.01;
   margin-bottom:25px;
-  animation:fadeUp 1s .12s ease both;
+  animation:fadeUp .9s .1s ease both;
 }
 
 .hero p{
@@ -374,7 +312,7 @@ section{
   color:#304258;
   max-width:650px;
   margin-bottom:32px;
-  animation:fadeUp 1s .24s ease both;
+  animation:fadeUp .9s .2s ease both;
 }
 
 @keyframes fadeUp{
@@ -382,22 +320,21 @@ section{
     opacity:0;
     transform:translateY(30px);
   }
-
   to{
     opacity:1;
     transform:translateY(0);
   }
 }
 
-/* =========================================================
+/* =========================
    BUTTONS
-   ========================================================= */
+   ========================= */
 
 .buttons{
   display:flex;
   gap:14px;
   flex-wrap:wrap;
-  animation:fadeUp 1s .36s ease both;
+  animation:fadeUp .9s .3s ease both;
 }
 
 .btn{
@@ -412,12 +349,10 @@ section{
   font-size:16px;
   border:1px solid transparent;
   overflow:hidden;
-  transition:
-    transform .3s ease,
-    box-shadow .3s ease;
+  transition:transform .3s ease,box-shadow .3s ease;
 }
 
-.btn:before{
+.btn::before{
   content:"";
   position:absolute;
   top:0;
@@ -427,14 +362,14 @@ section{
   background:linear-gradient(
     90deg,
     transparent,
-    rgba(255,255,255,.4),
+    rgba(255,255,255,.35),
     transparent
   );
   transform:skewX(-20deg);
   transition:left .6s ease;
 }
 
-.btn:hover:before{
+.btn:hover::before{
   left:140%;
 }
 
@@ -457,11 +392,7 @@ section{
 }
 
 .btn-gold{
-  background:linear-gradient(
-    135deg,
-    var(--gold),
-    var(--gold2)
-  );
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
   color:#071d35;
   box-shadow:0 10px 25px rgba(217,165,43,.22);
 }
@@ -470,32 +401,22 @@ section{
   box-shadow:0 15px 35px rgba(217,165,43,.35);
 }
 
-/* =========================================================
+/* =========================
    HERO CARD
-   ========================================================= */
+   ========================= */
 
 .hero-card{
   position:relative;
   background:
-    radial-gradient(
-      circle at 90% 10%,
-      rgba(243,202,85,.22),
-      transparent 30%
-    ),
-    linear-gradient(
-      145deg,
-      #092a4e,
-      #071d36
-    );
+    radial-gradient(circle at 90% 10%,rgba(243,202,85,.22),transparent 30%),
+    linear-gradient(145deg,#092a4e,#071d36);
   border:1px solid rgba(255,255,255,.12);
   border-radius:32px;
   padding:46px;
   color:#fff;
   box-shadow:0 30px 70px rgba(6,27,53,.28);
   overflow:hidden;
-  animation:
-    cardIn 1s .25s ease both,
-    floating 5s 1.5s ease-in-out infinite;
+  animation:cardIn 1s .2s ease both, floating 5s 1.5s ease-in-out infinite;
 }
 
 @keyframes cardIn{
@@ -503,7 +424,6 @@ section{
     opacity:0;
     transform:translateX(60px) rotate(2deg);
   }
-
   to{
     opacity:1;
     transform:translateX(0) rotate(0);
@@ -514,13 +434,12 @@ section{
   0%,100%{
     transform:translateY(0);
   }
-
   50%{
     transform:translateY(-10px);
   }
 }
 
-.hero-card:after{
+.hero-card::after{
   content:"";
   position:absolute;
   width:180px;
@@ -529,17 +448,9 @@ section{
   border:1px solid rgba(243,202,85,.25);
   right:-60px;
   bottom:-60px;
-  animation:circlePulse 4s ease-in-out infinite;
 }
 
-@keyframes circlePulse{
-  50%{
-    transform:scale(1.15);
-    opacity:.5;
-  }
-}
-
-.hero-card .big-icon{
+.big-icon{
   font-size:78px;
   margin-bottom:15px;
   animation:bounceIcon 3s ease-in-out infinite;
@@ -549,7 +460,6 @@ section{
   0%,100%{
     transform:translateY(0) rotate(0);
   }
-
   50%{
     transform:translateY(-8px) rotate(3deg);
   }
@@ -567,9 +477,9 @@ section{
   margin:0;
 }
 
-/* =========================================================
+/* =========================
    STATS
-   ========================================================= */
+   ========================= */
 
 .stats{
   display:grid;
@@ -605,9 +515,9 @@ section{
   font-size:14px;
 }
 
-/* =========================================================
+/* =========================
    ABOUT
-   ========================================================= */
+   ========================= */
 
 .about{
   background:#fff;
@@ -626,12 +536,7 @@ section{
 }
 
 .mission{
-  background:
-    linear-gradient(
-      145deg,
-      #f8fafc,
-      #fff
-    );
+  background:linear-gradient(145deg,#f8fafc,#fff);
   border-left:7px solid var(--gold);
   border-radius:0 28px 28px 0;
   padding:42px;
@@ -650,9 +555,9 @@ section{
   margin-bottom:15px;
 }
 
-/* =========================================================
+/* =========================
    FEATURES
-   ========================================================= */
+   ========================= */
 
 .features{
   padding-top:35px;
@@ -707,22 +612,14 @@ section{
   color:var(--muted);
 }
 
-/* =========================================================
+/* =========================
    COURSES
-   ========================================================= */
+   ========================= */
 
 .courses{
   background:
-    radial-gradient(
-      circle at 10% 10%,
-      rgba(217,165,43,.12),
-      transparent 28%
-    ),
-    linear-gradient(
-      145deg,
-      #061b35,
-      #0c355d
-    );
+    radial-gradient(circle at 10% 10%,rgba(217,165,43,.12),transparent 28%),
+    linear-gradient(145deg,#061b35,#0c355d);
   color:#fff;
   overflow:hidden;
 }
@@ -762,7 +659,7 @@ section{
   transition:.4s ease;
 }
 
-.course:before{
+.course::before{
   content:"";
   position:absolute;
   width:120px;
@@ -781,7 +678,7 @@ section{
   box-shadow:0 25px 50px rgba(0,0,0,.2);
 }
 
-.course:hover:before{
+.course:hover::before{
   transform:scale(2);
 }
 
@@ -817,9 +714,9 @@ section{
   padding-left:6px;
 }
 
-/* =========================================================
+/* =========================
    TEACHERS
-   ========================================================= */
+   ========================= */
 
 .teachers{
   background:#f7f8fb;
@@ -850,12 +747,7 @@ section{
   width:125px;
   height:125px;
   border-radius:50%;
-  background:
-    radial-gradient(
-      circle,
-      #123d6b,
-      #061b35
-    );
+  background:radial-gradient(circle,#123d6b,#061b35);
   display:grid;
   place-items:center;
   margin:0 auto 20px;
@@ -887,22 +779,14 @@ section{
   font-size:15px;
 }
 
-/* =========================================================
+/* =========================
    CONTACT
-   ========================================================= */
+   ========================= */
 
 .contact{
   background:
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(217,165,43,.14),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      var(--navy),
-      #0d355c
-    );
+    radial-gradient(circle at 90% 20%,rgba(217,165,43,.14),transparent 30%),
+    linear-gradient(135deg,var(--navy),#0d355c);
   color:#fff;
 }
 
@@ -939,11 +823,6 @@ section{
   border-radius:25px;
   padding:34px;
   box-shadow:0 25px 70px rgba(0,0,0,.2);
-  transition:.4s ease;
-}
-
-.form:hover{
-  transform:translateY(-5px);
 }
 
 label{
@@ -987,9 +866,9 @@ textarea{
   margin-top:18px;
 }
 
-/* =========================================================
+/* =========================
    FOOTER
-   ========================================================= */
+   ========================= */
 
 footer{
   background:#031426;
@@ -1008,49 +887,9 @@ footer p{
   margin-top:7px;
 }
 
-/* =========================================================
-   WHATSAPP BUTTON
-   ========================================================= */
-
-.whatsapp{
-  position:fixed;
-  left:20px;
-  bottom:20px;
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  background:#25D366;
-  color:#fff;
-  display:grid;
-  place-items:center;
-  font-size:27px;
-  z-index:500;
-  box-shadow:0 12px 30px rgba(0,0,0,.22);
-  animation:whatsappPulse 2s infinite;
-  transition:.3s ease;
-}
-
-.whatsapp:hover{
-  transform:scale(1.1);
-}
-
-@keyframes whatsappPulse{
-  0%,100%{
-    box-shadow:
-      0 0 0 0 rgba(37,211,102,.35),
-      0 12px 30px rgba(0,0,0,.22);
-  }
-
-  50%{
-    box-shadow:
-      0 0 0 12px rgba(37,211,102,0),
-      0 12px 30px rgba(0,0,0,.22);
-  }
-}
-
-/* =========================================================
+/* =========================
    TOP BUTTON
-   ========================================================= */
+   ========================= */
 
 #topBtn{
   position:fixed;
@@ -1083,9 +922,48 @@ footer p{
   transform:translateY(-5px);
 }
 
-/* =========================================================
+/* =========================
+   WHATSAPP
+   ========================= */
+
+.whatsapp{
+  position:fixed;
+  left:20px;
+  bottom:20px;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:27px;
+  z-index:500;
+  box-shadow:0 12px 30px rgba(0,0,0,.22);
+  animation:whatsappPulse 2s infinite;
+  transition:.3s ease;
+}
+
+.whatsapp:hover{
+  transform:scale(1.1);
+}
+
+@keyframes whatsappPulse{
+  0%,100%{
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,.35),
+      0 12px 30px rgba(0,0,0,.22);
+  }
+  50%{
+    box-shadow:
+      0 0 0 12px rgba(37,211,102,0),
+      0 12px 30px rgba(0,0,0,.22);
+  }
+}
+
+/* =========================
    RESPONSIVE
-   ========================================================= */
+   ========================= */
 
 @media(max-width:900px){
 
@@ -1215,18 +1093,14 @@ footer p{
   }
 }
 
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
 @media(prefers-reduced-motion:reduce){
 
   *,
-  *:before,
-  *:after{
-    animation:none!important;
-    transition:none!important;
-    scroll-behavior:auto!important;
+  *::before,
+  *::after{
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
   }
 
   .reveal{
@@ -1234,10 +1108,148 @@ footer p{
     transform:none;
   }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ======
+<!-- =========================
+     LOADER
+     ========================= -->
+
+<div class="loader" id="loader">
+  <div class="loader-box">
+    <div class="loader-logo">FF</div>
+    <span>Fluent Future</span>
+    <div class="loader-line"></div>
+  </div>
+</div>
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header class="topbar">
+  <div class="brand">
+
+    <div class="logo">FF</div>
+
+    <div>
+      <h1>
+        FLUENT FUTURE<br>
+        ENGLISH ACADEMY
+      </h1>
+
+      <p>
+        LEARN TODAY · LEAD TOMORROW
+      </p>
+    </div>
+
+  </div>
+</header>
+
+<!-- =========================
+     HERO
+     ========================= -->
+
+<section class="hero" id="home">
+
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="script">
+        Welcome to
+      </div>
+
+      <h2>
+        Fluent Future<br>
+        English Academy
+      </h2>
+
+      <p>
+        Build strong English skills for a brighter future.
+        Speak with confidence, learn with passion,
+        and grow every day.
+      </p>
+
+      <div class="buttons">
+
+        <a class="btn btn-dark" href="#courses">
+          Explore Courses →
+        </a>
+
+        <a class="btn btn-gold" href="#contact">
+          Contact Us →
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-card">
+
+      <div class="big-icon">
+        🎓
+      </div>
+
+      <h3>
+        Learn English With Confidence
+      </h3>
+
+      <p>
+        Practical English education designed to improve
+        speaking, grammar, vocabulary and academic communication.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     ABOUT
+     ========================= -->
+
+<section class="about" id="about">
+
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="reveal">
+
+        <span class="section-label">
+          WHO WE ARE
+        </span>
+
+        <h2 class="section-title">
+          About Fluent Future
+        </h2>
+
+        <p>
+          Fluent Future English Academy is dedicated to helping
+          learners improve their English communication, confidence
+          and academic skills. Our goal is to create a friendly
+          learning environment where every student can progress.
+        </p>
+
+        <div class="stats">
+
+          <div class="stat reveal">
+            <strong>1200+</strong>
+            <span>Students Enrolled</span>
+          </div>
+
+          <div class="stat reveal">
+            <strong>15+</strong>
+            <span>Expert Teachers</span>
+          </div>
+
+          <div class="stat reveal">
+            <strong>25+</strong>
+            <span>Courses & Classes</spa
