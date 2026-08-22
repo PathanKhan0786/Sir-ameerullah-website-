@@ -32,6 +32,7 @@ body{
   color:var(--text);
   background:#fff;
   line-height:1.65;
+  overflow-x:hidden;
 }
 
 a{
@@ -47,6 +48,9 @@ a{
   color:#fff;
   padding:16px 22px 14px;
   box-shadow:0 2px 12px rgba(0,0,0,.12);
+
+  /* ANIMATION */
+  animation:navDrop .7s ease both;
 }
 
 .brand{
@@ -69,6 +73,9 @@ a{
   font-weight:900;
   font-size:21px;
   border:3px solid var(--gold);
+
+  /* ANIMATION */
+  animation:logoIn 1s ease .2s both;
 }
 
 .brand h1{
@@ -113,6 +120,10 @@ section{
   align-items:center;
 }
 
+.hero-grid > div:first-child{
+  animation:heroLeft .9s ease .15s both;
+}
+
 .eyebrow,
 .section-label{
   color:#c79a28;
@@ -127,6 +138,7 @@ section{
   font-family:cursive;
   font-size:42px;
   margin-bottom:4px;
+  animation:fadeUp .8s ease .25s both;
 }
 
 .hero h2,
@@ -140,6 +152,7 @@ section{
   font-size:64px;
   line-height:1.05;
   margin-bottom:25px;
+  animation:fadeUp .9s ease .35s both;
 }
 
 .hero p{
@@ -147,12 +160,14 @@ section{
   color:#26374d;
   max-width:650px;
   margin-bottom:30px;
+  animation:fadeUp .9s ease .45s both;
 }
 
 .buttons{
   display:flex;
   gap:16px;
   flex-wrap:wrap;
+  animation:fadeUp .9s ease .55s both;
 }
 
 .btn{
@@ -161,11 +176,12 @@ section{
   border-radius:10px;
   font-weight:800;
   font-size:17px;
-  transition:.2s;
+  transition:transform .25s ease,box-shadow .25s ease;
 }
 
 .btn:hover{
-  transform:translateY(-2px);
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px rgba(8,37,70,.16);
 }
 
 .btn-dark{
@@ -184,11 +200,15 @@ section{
   padding:42px;
   color:#fff;
   box-shadow:0 18px 50px rgba(8,37,70,.2);
+
+  /* ANIMATION */
+  animation:heroCard 1s ease .25s both;
 }
 
 .hero-card .big-icon{
   font-size:80px;
   margin-bottom:15px;
+  animation:floatIcon 3s ease-in-out infinite;
 }
 
 .hero-card h3{
@@ -214,6 +234,12 @@ section{
   border-radius:18px;
   padding:25px;
   background:#fff;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+
+.stat:hover{
+  transform:translateY(-7px);
+  box-shadow:0 14px 30px rgba(8,37,70,.10);
 }
 
 .stat strong{
@@ -255,6 +281,12 @@ section{
   border-left:7px solid var(--gold);
   border-radius:0 25px 25px 0;
   padding:40px;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+
+.mission:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(8,37,70,.08);
 }
 
 .mission h3{
@@ -282,6 +314,11 @@ section{
   gap:18px;
   align-items:center;
   padding:18px 10px;
+  transition:transform .3s ease;
+}
+
+.feature:hover{
+  transform:translateX(6px);
 }
 
 .feature-icon{
@@ -293,6 +330,12 @@ section{
   align-items:center;
   justify-content:center;
   font-size:30px;
+  transition:transform .35s ease,background .35s ease;
+}
+
+.feature:hover .feature-icon{
+  transform:rotate(8deg) scale(1.08);
+  background:#123d6b;
 }
 
 .feature h3{
@@ -338,11 +381,23 @@ section{
   border-radius:18px;
   padding:30px;
   min-height:245px;
+  transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+}
+
+.course:hover{
+  transform:translateY(-9px);
+  box-shadow:0 18px 35px rgba(0,0,0,.18);
+  border-color:#e5c45d;
 }
 
 .course .icon{
   font-size:45px;
   margin-bottom:12px;
+  transition:transform .35s ease;
+}
+
+.course:hover .icon{
+  transform:scale(1.12) rotate(-5deg);
 }
 
 .course h3{
@@ -359,6 +414,11 @@ section{
   color:#f1c84b;
   font-weight:800;
   font-size:17px;
+  transition:padding-left .25s ease;
+}
+
+.learn:hover{
+  padding-left:6px;
 }
 
 .teachers{
@@ -377,6 +437,12 @@ section{
   padding:38px;
   text-align:center;
   box-shadow:0 7px 25px rgba(12,34,56,.06);
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+
+.teacher:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 40px rgba(12,34,56,.12);
 }
 
 .teacher-avatar{
@@ -389,6 +455,11 @@ section{
   justify-content:center;
   margin:0 auto 20px;
   font-size:65px;
+  transition:transform .4s ease;
+}
+
+.teacher:hover .teacher-avatar{
+  transform:scale(1.08) rotate(3deg);
 }
 
 .teacher h3{
@@ -439,15 +510,18 @@ section{
   margin:13px 0;
 }
 
-/* CONTACT FORM */
-
 .form{
   background:#fff;
   color:var(--text);
   border-radius:22px;
   padding:32px;
   box-shadow:0 18px 45px rgba(0,0,0,.22);
-  border:1px solid rgba(217,165,43,.35);
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+
+.form:hover{
+  transform:translateY(-5px);
+  box-shadow:0 22px 50px rgba(0,0,0,.25);
 }
 
 label{
@@ -469,6 +543,7 @@ textarea{
   outline:none;
   background:#fff;
   color:var(--text);
+  transition:border-color .25s ease,box-shadow .25s ease;
 }
 
 input:focus,
@@ -495,8 +570,6 @@ textarea{
   color:#071d35;
 }
 
-/* WHATSAPP BUTTON */
-
 .whatsapp-btn{
   display:inline-block;
   margin-top:15px;
@@ -506,7 +579,7 @@ textarea{
 }
 
 .whatsapp-btn:hover{
-  background:#20bd5a;
+  box-shadow:0 10px 25px rgba(37,211,102,.25);
 }
 
 footer{
@@ -524,6 +597,98 @@ footer p{
   color:#b9c6d5;
   margin-top:7px;
 }
+
+
+/* =========================================
+   PROFESSIONAL SCROLL ANIMATION
+   ========================================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+/* =========================================
+   ANIMATION KEYFRAMES
+   ========================================= */
+
+@keyframes navDrop{
+  from{
+    opacity:0;
+    transform:translateY(-25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes logoIn{
+  from{
+    opacity:0;
+    transform:scale(.5) rotate(-20deg);
+  }
+  to{
+    opacity:1;
+    transform:scale(1) rotate(0);
+  }
+}
+
+@keyframes heroLeft{
+  from{
+    opacity:0;
+    transform:translateX(-45px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes heroCard{
+  from{
+    opacity:0;
+    transform:translateX(45px) scale(.96);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0) scale(1);
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes floatIcon{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-8px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media(max-width:800px){
 
@@ -613,19 +778,30 @@ footer p{
     padding:24px;
   }
 }
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+    transition-duration:.01ms !important;
+  }
+
+}
 </style>
 </head>
 
 <body>
 
 <header class="topbar">
-
   <div class="brand">
 
     <div class="logo">FF</div>
 
     <div>
-
       <h1>
         FLUENT FUTURE<br>
         ENGLISH ACADEMY
@@ -634,11 +810,9 @@ footer p{
       <p>
         LEARN TODAY · LEAD TOMORROW
       </p>
-
     </div>
 
   </div>
-
 </header>
 
 
@@ -1119,8 +1293,6 @@ footer p{
       </div>
 
 
-      <!-- CALL BUTTON -->
-
       <a
         href="tel:+923165537432"
         class="btn btn-call"
@@ -1128,8 +1300,6 @@ footer p{
         📞 Call Now
       </a>
 
-
-      <!-- WHATSAPP BUTTON -->
 
       <a
         href="https://wa.me/923165537432"
@@ -1142,152 +1312,5 @@ footer p{
     </div>
 
 
-    <!-- WHATSAPP ENQUIRY FORM -->
-
     <form
-      class="form"
-      id="enquiryForm"
-    >
-
-      <label for="name">
-        Name
-      </label>
-
-      <input
-        id="name"
-        type="text"
-        placeholder="Your name"
-        required
-      >
-
-
-      <label for="phone">
-        Phone / WhatsApp
-      </label>
-
-      <input
-        id="phone"
-        type="tel"
-        placeholder="+92..."
-        required
-      >
-
-
-      <label for="course">
-        Course
-      </label>
-
-      <input
-        id="course"
-        type="text"
-        placeholder="Spoken English / IELTS / Grammar"
-      >
-
-
-      <label for="message">
-        Message
-      </label>
-
-      <textarea
-        id="message"
-        placeholder="Tell us what you want to learn"
-      ></textarea>
-
-
-      <button
-        class="btn btn-gold send"
-        type="submit"
-      >
-        💬 Send Enquiry
-      </button>
-
-    </form>
-
-  </div>
-
-</section>
-
-
-<footer>
-
-  <strong>
-    Fluent Future English Academy
-  </strong>
-
-  <p>
-    Learn Today · Lead Tomorrow
-  </p>
-
-  <p>
-    © 2026 Fluent Future English Academy.
-    All rights reserved.
-  </p>
-
-</footer>
-
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function(){
-
-  const form =
-    document.getElementById("enquiryForm");
-
-  form.addEventListener("submit", function(event){
-
-    event.preventDefault();
-
-    const name =
-      document.getElementById("name").value.trim();
-
-    const phone =
-      document.getElementById("phone").value.trim();
-
-    const course =
-      document.getElementById("course").value.trim();
-
-    const message =
-      document.getElementById("message").value.trim();
-
-    if(!name || !phone){
-
-      alert(
-        "Please enter your name and phone number."
-      );
-
-      return;
-    }
-
-    const whatsappMessage =
-      "Assalamualaikum, I want to enquire about Fluent Future English Academy." +
-      "\n\n" +
-      "Name: " + name +
-      "\n" +
-      "Phone: " + phone +
-      "\n" +
-      "Course: " +
-      (course || "Not specified") +
-      "\n" +
-      "Message: " +
-      (message || "No message");
-
-    const whatsappNumber =
-      "923165537432";
-
-    const whatsappURL =
-      "https://wa.me/" +
-      whatsappNumber +
-      "?text=" +
-      encodeURIComponent(whatsappMessage);
-
-    window.location.href =
-      whatsappURL;
-
-  });
-
-});
-
-</script>
-
-</body>
- </html>
+      class="for
