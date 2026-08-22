@@ -32,7 +32,70 @@ body{
   color:var(--text);
   background:#fff;
   line-height:1.65;
+  overflow-x:hidden;
 }
+
+/* ===== PAGE LOADER ===== */
+
+.page-loader{
+  position:fixed;
+  inset:0;
+  background:var(--navy);
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  transition:opacity .7s ease, visibility .7s ease;
+}
+
+.page-loader.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.loader-logo{
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  background:#fff;
+  color:var(--navy);
+  border:4px solid var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-weight:900;
+  animation:loaderPulse 1.4s ease-in-out infinite;
+}
+
+.loader-text{
+  color:#fff;
+  margin-top:18px;
+  font-family:Georgia,serif;
+  font-size:21px;
+  letter-spacing:1px;
+}
+
+.loader-line{
+  width:100px;
+  height:3px;
+  background:rgba(255,255,255,.2);
+  margin-top:16px;
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.loader-line::after{
+  content:"";
+  display:block;
+  width:45%;
+  height:100%;
+  background:var(--gold);
+  animation:loaderLine 1.1s ease-in-out infinite;
+}
+
+/* ===== TOP BAR ===== */
 
 a{
   text-decoration:none;
@@ -47,6 +110,7 @@ a{
   color:#fff;
   padding:16px 22px 14px;
   box-shadow:0 2px 12px rgba(0,0,0,.12);
+  animation:topbarDown .8s ease both;
 }
 
 .brand{
@@ -69,6 +133,12 @@ a{
   font-weight:900;
   font-size:21px;
   border:3px solid var(--gold);
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+
+.logo:hover{
+  transform:rotate(-8deg) scale(1.08);
+  box-shadow:0 0 20px rgba(217,165,43,.45);
 }
 
 .brand h1{
@@ -85,6 +155,8 @@ a{
   margin-top:5px;
 }
 
+/* ===== GENERAL ===== */
+
 section{
   padding:78px 20px;
 }
@@ -93,6 +165,8 @@ section{
   max-width:1100px;
   margin:auto;
 }
+
+/* ===== HERO ===== */
 
 .hero{
   min-height:680px;
@@ -104,6 +178,32 @@ section{
     #fff 55%,
     #f7f9fc 100%
   );
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background:rgba(217,165,43,.08);
+  top:-120px;
+  right:-100px;
+  animation:softFloat 7s ease-in-out infinite;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  border:1px solid rgba(8,37,70,.08);
+  bottom:-80px;
+  left:-60px;
+  animation:softFloat 8s ease-in-out infinite reverse;
 }
 
 .hero-grid{
@@ -111,6 +211,12 @@ section{
   grid-template-columns:1.05fr .95fr;
   gap:50px;
   align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.hero-grid > div:first-child{
+  animation:heroText .9s .15s ease both;
 }
 
 .eyebrow,
@@ -127,6 +233,7 @@ section{
   font-family:cursive;
   font-size:42px;
   margin-bottom:4px;
+  animation:fadeUp .8s .25s ease both;
 }
 
 .hero h2,
@@ -140,6 +247,7 @@ section{
   font-size:64px;
   line-height:1.05;
   margin-bottom:25px;
+  animation:fadeUp .8s .4s ease both;
 }
 
 .hero p{
@@ -147,12 +255,14 @@ section{
   color:#26374d;
   max-width:650px;
   margin-bottom:30px;
+  animation:fadeUp .8s .55s ease both;
 }
 
 .buttons{
   display:flex;
   gap:16px;
   flex-wrap:wrap;
+  animation:fadeUp .8s .7s ease both;
 }
 
 .btn{
@@ -161,11 +271,15 @@ section{
   border-radius:10px;
   font-weight:800;
   font-size:17px;
-  transition:.2s;
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    background .3s ease;
 }
 
 .btn:hover{
-  transform:translateY(-2px);
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px rgba(8,37,70,.18);
 }
 
 .btn-dark{
@@ -173,9 +287,17 @@ section{
   color:#fff;
 }
 
+.btn-dark:hover{
+  background:#123d6b;
+}
+
 .btn-gold{
   background:var(--gold);
   color:#071d35;
+}
+
+.btn-gold:hover{
+  background:#edbc3a;
 }
 
 .hero-card{
@@ -184,11 +306,18 @@ section{
   padding:42px;
   color:#fff;
   box-shadow:0 18px 50px rgba(8,37,70,.2);
+  animation:heroCard 1s .35s ease both, cardFloat 5s 1.5s ease-in-out infinite;
+  transition:box-shadow .4s ease, transform .4s ease;
+}
+
+.hero-card:hover{
+  box-shadow:0 25px 60px rgba(8,37,70,.3);
 }
 
 .hero-card .big-icon{
   font-size:80px;
   margin-bottom:15px;
+  animation:iconFloat 3s ease-in-out infinite;
 }
 
 .hero-card h3{
@@ -202,6 +331,8 @@ section{
   font-size:18px;
 }
 
+/* ===== STATS ===== */
+
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -214,6 +345,13 @@ section{
   border-radius:18px;
   padding:25px;
   background:#fff;
+  transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+.stat:hover{
+  transform:translateY(-7px);
+  box-shadow:0 15px 30px rgba(8,37,70,.1);
+  border-color:rgba(217,165,43,.5);
 }
 
 .stat strong{
@@ -227,6 +365,8 @@ section{
   color:var(--muted);
   font-size:16px;
 }
+
+/* ===== ABOUT ===== */
 
 .about{
   background:#fff;
@@ -255,6 +395,12 @@ section{
   border-left:7px solid var(--gold);
   border-radius:0 25px 25px 0;
   padding:40px;
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+
+.mission:hover{
+  transform:translateX(6px);
+  box-shadow:0 15px 35px rgba(8,37,70,.08);
 }
 
 .mission h3{
@@ -266,6 +412,8 @@ section{
   font-size:19px;
   color:#334155;
 }
+
+/* ===== FEATURES ===== */
 
 .features{
   padding-top:20px;
@@ -282,6 +430,13 @@ section{
   gap:18px;
   align-items:center;
   padding:18px 10px;
+  border-radius:15px;
+  transition:transform .35s ease, background .35s ease;
+}
+
+.feature:hover{
+  transform:translateX(8px);
+  background:#f8fafc;
 }
 
 .feature-icon{
@@ -293,6 +448,12 @@ section{
   align-items:center;
   justify-content:center;
   font-size:30px;
+  transition:transform .35s ease, background .35s ease;
+}
+
+.feature:hover .feature-icon{
+  transform:scale(1.1) rotate(5deg);
+  background:var(--gold);
 }
 
 .feature h3{
@@ -302,6 +463,8 @@ section{
 .feature p{
   color:var(--muted);
 }
+
+/* ===== COURSES ===== */
 
 .courses{
   background:var(--navy);
@@ -338,11 +501,28 @@ section{
   border-radius:18px;
   padding:30px;
   min-height:245px;
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease,
+    border-color .4s ease,
+    background .4s ease;
+}
+
+.course:hover{
+  transform:translateY(-10px);
+  background:#174776;
+  border-color:var(--gold);
+  box-shadow:0 18px 35px rgba(0,0,0,.22);
 }
 
 .course .icon{
   font-size:45px;
   margin-bottom:12px;
+  transition:transform .4s ease;
+}
+
+.course:hover .icon{
+  transform:scale(1.15) translateY(-4px);
 }
 
 .course h3{
@@ -359,7 +539,14 @@ section{
   color:#f1c84b;
   font-weight:800;
   font-size:17px;
+  transition:letter-spacing .3s ease;
 }
+
+.learn:hover{
+  letter-spacing:.5px;
+}
+
+/* ===== TEACHERS ===== */
 
 .teachers{
   background:#f7f8fb;
@@ -377,6 +564,14 @@ section{
   padding:38px;
   text-align:center;
   box-shadow:0 7px 25px rgba(12,34,56,.06);
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+.teacher:hover{
+  transform:translateY(-9px);
+  box-shadow:0 20px 40px rgba(12,34,56,.12);
 }
 
 .teacher-avatar{
@@ -389,6 +584,12 @@ section{
   justify-content:center;
   margin:0 auto 20px;
   font-size:65px;
+  transition:transform .5s ease, box-shadow .5s ease;
+}
+
+.teacher:hover .teacher-avatar{
+  transform:scale(1.08) rotate(3deg);
+  box-shadow:0 10px 25px rgba(8,37,70,.2);
 }
 
 .teacher h3{
@@ -406,6 +607,8 @@ section{
   color:#697586;
   font-size:16px;
 }
+
+/* ===== CONTACT ===== */
 
 .contact{
   background:linear-gradient(
@@ -444,6 +647,12 @@ section{
   color:var(--text);
   border-radius:22px;
   padding:32px;
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+
+.form:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px rgba(0,0,0,.2);
 }
 
 label{
@@ -461,12 +670,14 @@ textarea{
   font-size:16px;
   margin-bottom:18px;
   outline:none;
+  transition:border-color .3s ease, box-shadow .3s ease, transform .3s ease;
 }
 
 input:focus,
 textarea:focus{
   border-color:var(--gold);
   box-shadow:0 0 0 3px rgba(217,165,43,.15);
+  transform:translateY(-1px);
 }
 
 textarea{
@@ -487,6 +698,8 @@ textarea{
   color:#071d35;
 }
 
+/* ===== FOOTER ===== */
+
 footer{
   background:#041a31;
   color:#fff;
@@ -502,6 +715,132 @@ footer p{
   color:#b9c6d5;
   margin-top:7px;
 }
+
+/* ===== SCROLL REVEAL ===== */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal-left{
+  opacity:0;
+  transform:translateX(-40px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal-right{
+  opacity:0;
+  transform:translateX(40px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.show,
+.reveal-left.show,
+.reveal-right.show{
+  opacity:1;
+  transform:translate(0);
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes topbarDown{
+  from{
+    opacity:0;
+    transform:translateY(-25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes heroText{
+  from{
+    opacity:0;
+    transform:translateX(-35px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes heroCard{
+  from{
+    opacity:0;
+    transform:translateX(35px) scale(.96);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0) scale(1);
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes cardFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-8px);
+  }
+}
+
+@keyframes iconFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-7px);
+  }
+}
+
+@keyframes softFloat{
+  0%,100%{
+    transform:translate(0,0);
+  }
+  50%{
+    transform:translate(-15px,15px);
+  }
+}
+
+@keyframes loaderPulse{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.08);
+  }
+}
+
+@keyframes loaderLine{
+  0%{
+    transform:translateX(-120%);
+  }
+  100%{
+    transform:translateX(250%);
+  }
+}
+
+/* ===== MOBILE ===== */
 
 @media(max-width:800px){
 
@@ -541,7 +880,8 @@ footer p{
   }
 
   .hero-card{
-    display:none;
+    display:block;
+    margin-top:10px;
   }
 }
 
@@ -582,11 +922,46 @@ footer p{
   .stat strong{
     font-size:34px;
   }
+
+  .hero-card{
+    padding:30px;
+  }
+
+  .hero-card .big-icon{
+    font-size:65px;
+  }
+
+  .contact h2{
+    font-size:43px;
+  }
+}
+
+/* ===== REDUCE MOTION FOR ACCESSIBILITY ===== */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+    transition-duration:.01ms !important;
+  }
 }
 </style>
 </head>
 
 <body>
+
+<!-- PAGE LOADER -->
+
+<div class="page-loader" id="pageLoader">
+  <div class="loader-logo">FF</div>
+  <div class="loader-text">Fluent Future</div>
+  <div class="loader-line"></div>
+</div>
+
 
 <header class="topbar">
   <div class="brand">
@@ -672,7 +1047,7 @@ footer p{
 
     <div class="about-grid">
 
-      <div>
+      <div class="reveal-left">
 
         <span class="section-label">
           WHO WE ARE
@@ -691,22 +1066,22 @@ footer p{
 
         <div class="stats">
 
-          <div class="stat">
+          <div class="stat reveal">
             <strong>1200+</strong>
             <span>Students Enrolled</span>
           </div>
 
-          <div class="stat">
+          <div class="stat reveal">
             <strong>15+</strong>
             <span>Expert Teachers</span>
           </div>
 
-          <div class="stat">
+          <div class="stat reveal">
             <strong>25+</strong>
             <span>Courses & Classes</span>
           </div>
 
-          <div class="stat">
+          <div class="stat reveal">
             <strong>10+</strong>
             <span>Countries Reached</span>
           </div>
@@ -716,7 +1091,7 @@ footer p{
       </div>
 
 
-      <div class="mission">
+      <div class="mission reveal-right">
 
         <h3>
           Our Mission
@@ -750,8 +1125,7 @@ footer p{
 
     <div class="feature-list">
 
-      <div class="feature">
-
+      <div class="feature reveal">
         <div class="feature-icon">
           👨‍🏫
         </div>
@@ -760,12 +1134,10 @@ footer p{
           <h3>Expert Teachers</h3>
           <p>Qualified & experienced</p>
         </div>
-
       </div>
 
 
-      <div class="feature">
-
+      <div class="feature reveal">
         <div class="feature-icon">
           📖
         </div>
@@ -774,12 +1146,10 @@ footer p{
           <h3>Quality Education</h3>
           <p>Practical learning</p>
         </div>
-
       </div>
 
 
-      <div class="feature">
-
+      <div class="feature reveal">
         <div class="feature-icon">
           🎧
         </div>
@@ -788,12 +1158,10 @@ footer p{
           <h3>Personal Support</h3>
           <p>Guidance every step</p>
         </div>
-
       </div>
 
 
-      <div class="feature">
-
+      <div class="feature reveal">
         <div class="feature-icon">
           🏆
         </div>
@@ -802,7 +1170,6 @@ footer p{
           <h3>Certificates</h3>
           <p>Achieve your goals</p>
         </div>
-
       </div>
 
     </div>
@@ -832,15 +1199,10 @@ footer p{
 
     <div class="course-grid">
 
-      <div class="course">
+      <div class="course reveal">
+        <div class="icon">🗣️</div>
 
-        <div class="icon">
-          🗣️
-        </div>
-
-        <h3>
-          Spoken English
-        </h3>
+        <h3>Spoken English</h3>
 
         <p>
           Speak naturally and confidently in everyday conversations.
@@ -849,19 +1211,13 @@ footer p{
         <a class="learn" href="#contact">
           Learn More →
         </a>
-
       </div>
 
 
-      <div class="course">
+      <div class="course reveal">
+        <div class="icon">✍️</div>
 
-        <div class="icon">
-          ✍️
-        </div>
-
-        <h3>
-          Grammar Course
-        </h3>
+        <h3>Grammar Course</h3>
 
         <p>
           Master grammar through easy explanations and practice.
@@ -870,19 +1226,13 @@ footer p{
         <a class="learn" href="#contact">
           Learn More →
         </a>
-
       </div>
 
 
-      <div class="course">
+      <div class="course reveal">
+        <div class="icon">📚</div>
 
-        <div class="icon">
-          📚
-        </div>
-
-        <h3>
-          Vocabulary Building
-        </h3>
+        <h3>Vocabulary Building</h3>
 
         <p>
           Build useful vocabulary for confident speaking and writing.
@@ -891,19 +1241,13 @@ footer p{
         <a class="learn" href="#contact">
           Learn More →
         </a>
-
       </div>
 
 
-      <div class="course">
+      <div class="course reveal">
+        <div class="icon">🎯</div>
 
-        <div class="icon">
-          🎯
-        </div>
-
-        <h3>
-          IELTS Preparation
-        </h3>
+        <h3>IELTS Preparation</h3>
 
         <p>
           Focused preparation for listening, reading,
@@ -913,19 +1257,13 @@ footer p{
         <a class="learn" href="#contact">
           Learn More →
         </a>
-
       </div>
 
 
-      <div class="course">
+      <div class="course reveal">
+        <div class="icon">💼</div>
 
-        <div class="icon">
-          💼
-        </div>
-
-        <h3>
-          Professional English
-        </h3>
+        <h3>Professional English</h3>
 
         <p>
           Improve communication for study, work and professional life.
@@ -934,306 +1272,16 @@ footer p{
         <a class="learn" href="#contact">
           Learn More →
         </a>
-
       </div>
 
 
-      <div class="course">
+      <div class="course reveal">
+        <div class="icon">🎓</div>
 
-        <div class="icon">
-          🎓
-        </div>
-
-        <h3>
-          Academic English
-        </h3>
+        <h3>Academic English</h3>
 
         <p>
           Strengthen English skills for academic success and confidence.
         </p>
 
-        <a class="learn" href="#contact">
-          Learn More →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="teachers" id="teachers">
-
-  <div class="container">
-
-    <span class="section-label">
-      MEET THE TEACHER
-    </span>
-
-    <h2 class="section-title">
-      Our Teacher
-    </h2>
-
-    <p class="intro" style="color:#697586">
-      Professional guidance, practical teaching and
-      personal attention for every learner.
-    </p>
-
-
-    <div class="teacher-grid">
-
-      <div class="teacher">
-
-        <div class="teacher-avatar">
-          👨‍🏫
-        </div>
-
-        <h3>
-          Sir Amirullah
-        </h3>
-
-        <div class="role">
-          English Language Specialist
-        </div>
-
-        <p class="bio">
-          Sir Amirullah teaches English in a professional,
-          friendly and easy-to-understand way. He focuses
-          on practical speaking, clear grammar, useful
-          vocabulary and confidence-building practice.
-        </p>
-
-      </div>
-
-
-      <div class="teacher">
-
-        <div class="teacher-avatar">
-          📘
-        </div>
-
-        <h3>
-          Sir Amirullah
-        </h3>
-
-        <div class="role">
-          Spoken English & Grammar
-        </div>
-
-        <p class="bio">
-          With a student-focused approach, Sir Amirullah
-          explains difficult concepts in simple language
-          and encourages learners to practise regularly.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="contact" id="contact">
-
-  <div class="container contact-grid">
-
-    <div>
-
-      <span class="section-label">
-        GET IN TOUCH
-      </span>
-
-      <h2>
-        Start Your<br>
-        English Journey
-      </h2>
-
-      <p class="contact-info">
-        Ready to improve your English?
-        Send your details and the academy can contact
-        you about courses, fees and class timings.
-      </p>
-
-
-      <div class="contact-info" style="margin-top:24px">
-
-        <div>
-          <strong>Phone:</strong>
-          +923165537432
-        </div>
-
-        <div>
-          <strong>Email:</strong>
-          info@fluentfutureacademy.com
-        </div>
-
-        <div>
-          <strong>Location:</strong>
-          Karachi, Pakistan
-        </div>
-
-      </div>
-
-
-      <a
-        href="tel:+923165537432"
-        class="btn btn-call"
-      >
-        📞 Call Now
-      </a>
-
-    </div>
-
-
-    <form
-      class="form"
-      id="enquiryForm"
-    >
-
-      <label for="name">
-        Name
-      </label>
-
-      <input
-        id="name"
-        type="text"
-        placeholder="Your name"
-        required
-      >
-
-
-      <label for="phone">
-        Phone / WhatsApp
-      </label>
-
-      <input
-        id="phone"
-        type="tel"
-        placeholder="+92..."
-        required
-      >
-
-
-      <label for="course">
-        Course
-      </label>
-
-      <input
-        id="course"
-        type="text"
-        placeholder="Spoken English / IELTS / Grammar"
-      >
-
-
-      <label for="message">
-        Message
-      </label>
-
-      <textarea
-        id="message"
-        placeholder="Tell us what you want to learn"
-      ></textarea>
-
-
-      <button
-        class="btn btn-gold send"
-        type="submit"
-      >
-        Send Enquiry
-      </button>
-
-    </form>
-
-  </div>
-
-</section>
-
-
-<footer>
-
-  <strong>
-    Fluent Future English Academy
-  </strong>
-
-  <p>
-    Learn Today · Lead Tomorrow
-  </p>
-
-  <p>
-    © 2026 Fluent Future English Academy.
-    All rights reserved.
-  </p>
-
-</footer>
-
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function(){
-
-  const form =
-    document.getElementById("enquiryForm");
-
-  form.addEventListener("submit", function(event){
-
-    event.preventDefault();
-
-    const name =
-      document.getElementById("name").value.trim();
-
-    const phone =
-      document.getElementById("phone").value.trim();
-
-    const course =
-      document.getElementById("course").value.trim();
-
-    const message =
-      document.getElementById("message").value.trim();
-
-    if(!name || !phone){
-
-      alert(
-        "Please enter your name and phone number."
-      );
-
-      return;
-    }
-
-    const whatsappMessage =
-      "Assalamualaikum, I want to enquire about Fluent Future English Academy." +
-      "\n\n" +
-      "Name: " + name +
-      "\n" +
-      "Phone: " + phone +
-      "\n" +
-      "Course: " +
-      (course || "Not specified") +
-      "\n" +
-      "Message: " +
-      (message || "No message");
-
-    const whatsappNumber =
-      "923165537432";
-
-    const whatsappURL =
-      "https://wa.me/" +
-      whatsappNumber +
-      "?text=" +
-      encodeURIComponent(whatsappMessage);
-
-    window.location.href =
-      whatsappURL;
-
-  });
-
-});
-
-</script>
-
-</body>
-            </html>
+        
