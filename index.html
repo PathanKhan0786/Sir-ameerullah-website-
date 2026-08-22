@@ -95,7 +95,7 @@ a{
   margin-top:5px;
 }
 
-/* GENERAL */
+/* SECTIONS */
 
 section{
   padding:78px 20px;
@@ -319,6 +319,7 @@ section{
   border-left:7px solid var(--gold);
   border-radius:0 25px 25px 0;
   padding:40px;
+  animation:softAppear .8s .25s ease both;
   transition:.4s ease;
 }
 
@@ -425,8 +426,15 @@ section{
   border-radius:18px;
   padding:30px;
   min-height:245px;
+  animation:softAppear .7s ease both;
   transition:.4s ease;
 }
+
+.course:nth-child(2){animation-delay:.08s}
+.course:nth-child(3){animation-delay:.16s}
+.course:nth-child(4){animation-delay:.24s}
+.course:nth-child(5){animation-delay:.32s}
+.course:nth-child(6){animation-delay:.40s}
 
 .course:hover{
   transform:translateY(-9px);
@@ -484,7 +492,12 @@ section{
   padding:38px;
   text-align:center;
   box-shadow:0 7px 25px rgba(12,34,56,.06);
+  animation:softAppear .8s ease both;
   transition:.4s ease;
+}
+
+.teacher:nth-child(2){
+  animation-delay:.15s;
 }
 
 .teacher:hover{
@@ -565,6 +578,7 @@ section{
   color:var(--text);
   border-radius:22px;
   padding:32px;
+  animation:softAppear .8s .15s ease both;
   transition:.4s ease;
 }
 
@@ -633,40 +647,7 @@ footer p{
   margin-top:7px;
 }
 
-/* SCROLL ANIMATION */
-
-.reveal{
-  opacity:0;
-  transform:translateY(28px);
-  transition:
-    opacity .7s ease,
-    transform .7s ease;
-}
-
-.reveal-left{
-  opacity:0;
-  transform:translateX(-30px);
-  transition:
-    opacity .7s ease,
-    transform .7s ease;
-}
-
-.reveal-right{
-  opacity:0;
-  transform:translateX(30px);
-  transition:
-    opacity .7s ease,
-    transform .7s ease;
-}
-
-.reveal.show,
-.reveal-left.show,
-.reveal-right.show{
-  opacity:1;
-  transform:translate(0);
-}
-
-/* KEYFRAMES */
+/* ANIMATIONS */
 
 @keyframes navDown{
   from{
@@ -705,6 +686,17 @@ footer p{
   from{
     opacity:0;
     transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes softAppear{
+  from{
+    opacity:0;
+    transform:translateY(18px);
   }
   to{
     opacity:1;
@@ -825,7 +817,7 @@ footer p{
   }
 }
 
-/* ACCESSIBILITY */
+/* REDUCE MOTION */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -844,11 +836,15 @@ footer p{
 <body>
 
 <header class="topbar">
+
   <div class="brand">
 
-    <div class="logo">FF</div>
+    <div class="logo">
+      FF
+    </div>
 
     <div>
+
       <h1>
         FLUENT FUTURE<br>
         ENGLISH ACADEMY
@@ -857,9 +853,11 @@ footer p{
       <p>
         LEARN TODAY · LEAD TOMORROW
       </p>
+
     </div>
 
   </div>
+
 </header>
 
 
@@ -927,7 +925,7 @@ footer p{
 
     <div class="about-grid">
 
-      <div class="reveal-left">
+      <div>
 
         <span class="section-label">
           WHO WE ARE
@@ -946,22 +944,22 @@ footer p{
 
         <div class="stats">
 
-          <div class="stat reveal">
+          <div class="stat">
             <strong>1200+</strong>
             <span>Students Enrolled</span>
           </div>
 
-          <div class="stat reveal">
+          <div class="stat">
             <strong>15+</strong>
             <span>Expert Teachers</span>
           </div>
 
-          <div class="stat reveal">
+          <div class="stat">
             <strong>25+</strong>
             <span>Courses & Classes</span>
           </div>
 
-          <div class="stat reveal">
+          <div class="stat">
             <strong>10+</strong>
             <span>Countries Reached</span>
           </div>
@@ -971,7 +969,7 @@ footer p{
       </div>
 
 
-      <div class="mission reveal-right">
+      <div class="mission">
 
         <h3>
           Our Mission
@@ -1005,7 +1003,8 @@ footer p{
 
     <div class="feature-list">
 
-      <div class="feature reveal">
+      <div class="feature">
+
         <div class="feature-icon">
           👨‍🏫
         </div>
@@ -1014,10 +1013,12 @@ footer p{
           <h3>Expert Teachers</h3>
           <p>Qualified & experienced</p>
         </div>
+
       </div>
 
 
-      <div class="feature reveal">
+      <div class="feature">
+
         <div class="feature-icon">
           📖
         </div>
@@ -1026,10 +1027,12 @@ footer p{
           <h3>Quality Education</h3>
           <p>Practical learning</p>
         </div>
+
       </div>
 
 
-      <div class="feature reveal">
+      <div class="feature">
+
         <div class="feature-icon">
           🎧
         </div>
@@ -1038,10 +1041,12 @@ footer p{
           <h3>Personal Support</h3>
           <p>Guidance every step</p>
         </div>
+
       </div>
 
 
-      <div class="feature reveal">
+      <div class="feature">
+
         <div class="feature-icon">
           🏆
         </div>
@@ -1050,6 +1055,7 @@ footer p{
           <h3>Certificates</h3>
           <p>Achieve your goals</p>
         </div>
+
       </div>
 
     </div>
@@ -1079,7 +1085,7 @@ footer p{
 
     <div class="course-grid">
 
-      <div class="course reveal">
+      <div class="course">
 
         <div class="icon">
           🗣️
@@ -1100,7 +1106,7 @@ footer p{
       </div>
 
 
-      <div class="course reveal">
+      <div class="course">
 
         <div class="icon">
           ✍️
@@ -1121,7 +1127,7 @@ footer p{
       </div>
 
 
-      <div class="course reveal">
+      <div class="course">
 
         <div class="icon">
           📚
@@ -1142,7 +1148,7 @@ footer p{
       </div>
 
 
-      <div class="course reveal">
+      <div class="course">
 
         <div class="icon">
           🎯
@@ -1164,7 +1170,7 @@ footer p{
       </div>
 
 
-      <div class="course reveal">
+      <div class="course">
 
         <div class="icon">
           💼
@@ -1185,7 +1191,7 @@ footer p{
       </div>
 
 
-      <div class="course reveal">
+      <div class="course">
 
         <div class="icon">
           🎓
@@ -1232,7 +1238,7 @@ footer p{
 
     <div class="teacher-grid">
 
-      <div class="teacher reveal-left">
+      <div class="teacher">
 
         <div class="teacher-avatar">
           👨‍🏫
@@ -1256,7 +1262,7 @@ footer p{
       </div>
 
 
-      <div class="teacher reveal-right">
+      <div class="teacher">
 
         <div class="teacher-avatar">
           📘
@@ -1289,7 +1295,7 @@ footer p{
 
   <div class="container contact-grid">
 
-    <div class="reveal-left">
+    <div>
 
       <span class="section-label">
         GET IN TOUCH
@@ -1338,4 +1344,8 @@ footer p{
 
 
     <form
-     
+      class="form"
+      id="enquiryForm"
+    >
+
+      <label fo
