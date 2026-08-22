@@ -11,7 +11,6 @@
   --navy:#082546;
   --navy2:#123d6b;
   --gold:#d9a52b;
-  --gold2:#edbc3a;
   --text:#12243a;
   --muted:#697586;
   --light:#f6f8fb;
@@ -33,15 +32,12 @@ body{
   color:var(--text);
   background:#fff;
   line-height:1.65;
-  overflow-x:hidden;
 }
 
 a{
   text-decoration:none;
   color:inherit;
 }
-
-/* ================= TOP BAR ================= */
 
 .topbar{
   position:sticky;
@@ -51,7 +47,6 @@ a{
   color:#fff;
   padding:16px 22px 14px;
   box-shadow:0 2px 12px rgba(0,0,0,.12);
-  animation:navDown .7s ease both;
 }
 
 .brand{
@@ -74,12 +69,6 @@ a{
   font-weight:900;
   font-size:21px;
   border:3px solid var(--gold);
-  transition:.3s ease;
-}
-
-.logo:hover{
-  transform:scale(1.08) rotate(-5deg);
-  box-shadow:0 0 18px rgba(217,165,43,.4);
 }
 
 .brand h1{
@@ -96,8 +85,6 @@ a{
   margin-top:5px;
 }
 
-/* ================= GENERAL ================= */
-
 section{
   padding:78px 20px;
 }
@@ -106,25 +93,6 @@ section{
   max-width:1100px;
   margin:auto;
 }
-
-.section-label{
-  color:#c79a28;
-  font-weight:800;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-size:16px;
-}
-
-.section-title{
-  font-family:Georgia,serif;
-  font-weight:700;
-  color:var(--navy);
-  font-size:58px;
-  line-height:1.1;
-  margin:10px 0 25px;
-}
-
-/* ================= HERO ================= */
 
 .hero{
   min-height:680px;
@@ -136,20 +104,6 @@ section{
     #fff 55%,
     #f7f9fc 100%
   );
-  position:relative;
-  overflow:hidden;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  background:rgba(217,165,43,.07);
-  top:-100px;
-  right:-80px;
-  animation:floatSoft 8s ease-in-out infinite;
 }
 
 .hero-grid{
@@ -157,12 +111,15 @@ section{
   grid-template-columns:1.05fr .95fr;
   gap:50px;
   align-items:center;
-  position:relative;
-  z-index:2;
 }
 
-.hero-grid > div:first-child{
-  animation:heroLeft .8s ease both;
+.eyebrow,
+.section-label{
+  color:#c79a28;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-size:16px;
 }
 
 .script{
@@ -172,14 +129,17 @@ section{
   margin-bottom:4px;
 }
 
-.hero h2{
+.hero h2,
+.section-title{
   font-family:Georgia,serif;
   font-weight:700;
   color:var(--navy);
+}
+
+.hero h2{
   font-size:64px;
   line-height:1.05;
   margin-bottom:25px;
-  animation:fadeUp .8s .15s ease both;
 }
 
 .hero p{
@@ -187,14 +147,12 @@ section{
   color:#26374d;
   max-width:650px;
   margin-bottom:30px;
-  animation:fadeUp .8s .25s ease both;
 }
 
 .buttons{
   display:flex;
   gap:16px;
   flex-wrap:wrap;
-  animation:fadeUp .8s .35s ease both;
 }
 
 .btn{
@@ -203,12 +161,11 @@ section{
   border-radius:10px;
   font-weight:800;
   font-size:17px;
-  transition:.3s ease;
+  transition:.2s;
 }
 
 .btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 25px rgba(8,37,70,.18);
+  transform:translateY(-2px);
 }
 
 .btn-dark{
@@ -216,17 +173,9 @@ section{
   color:#fff;
 }
 
-.btn-dark:hover{
-  background:var(--navy2);
-}
-
 .btn-gold{
   background:var(--gold);
   color:#071d35;
-}
-
-.btn-gold:hover{
-  background:var(--gold2);
 }
 
 .hero-card{
@@ -235,19 +184,11 @@ section{
   padding:42px;
   color:#fff;
   box-shadow:0 18px 50px rgba(8,37,70,.2);
-  animation:heroRight .9s .2s ease both;
-  transition:.4s ease;
-}
-
-.hero-card:hover{
-  transform:translateY(-7px);
-  box-shadow:0 25px 55px rgba(8,37,70,.28);
 }
 
 .hero-card .big-icon{
   font-size:80px;
   margin-bottom:15px;
-  animation:iconFloat 3s ease-in-out infinite;
 }
 
 .hero-card h3{
@@ -261,50 +202,6 @@ section{
   font-size:18px;
 }
 
-/* ================= ABOUT ================= */
-
-.about{
-  background:#fff;
-}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
-}
-
-.about p{
-  font-size:19px;
-  color:var(--muted);
-}
-
-.mission{
-  background:var(--light);
-  border-left:7px solid var(--gold);
-  border-radius:0 25px 25px 0;
-  padding:40px;
-  animation:softAppear .8s .25s ease both;
-  transition:.4s ease;
-}
-
-.mission:hover{
-  transform:translateX(6px);
-  box-shadow:0 15px 35px rgba(8,37,70,.08);
-}
-
-.mission h3{
-  font-size:32px;
-  margin-bottom:15px;
-}
-
-.mission p{
-  font-size:19px;
-  color:#334155;
-}
-
-/* ================= STATS ================= */
-
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -317,13 +214,6 @@ section{
   border-radius:18px;
   padding:25px;
   background:#fff;
-  transition:.35s ease;
-}
-
-.stat:hover{
-  transform:translateY(-7px);
-  box-shadow:0 15px 30px rgba(8,37,70,.1);
-  border-color:rgba(217,165,43,.5);
 }
 
 .stat strong{
@@ -338,7 +228,44 @@ section{
   font-size:16px;
 }
 
-/* ================= FEATURES ================= */
+.about{
+  background:#fff;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.section-title{
+  font-size:58px;
+  line-height:1.1;
+  margin:10px 0 25px;
+}
+
+.about p{
+  font-size:19px;
+  color:var(--muted);
+}
+
+.mission{
+  background:var(--light);
+  border-left:7px solid var(--gold);
+  border-radius:0 25px 25px 0;
+  padding:40px;
+}
+
+.mission h3{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.mission p{
+  font-size:19px;
+  color:#334155;
+}
 
 .features{
   padding-top:20px;
@@ -355,13 +282,6 @@ section{
   gap:18px;
   align-items:center;
   padding:18px 10px;
-  border-radius:15px;
-  transition:.35s ease;
-}
-
-.feature:hover{
-  transform:translateX(8px);
-  background:#f8fafc;
 }
 
 .feature-icon{
@@ -373,12 +293,6 @@ section{
   align-items:center;
   justify-content:center;
   font-size:30px;
-  transition:.35s ease;
-}
-
-.feature:hover .feature-icon{
-  transform:scale(1.1);
-  background:var(--gold);
 }
 
 .feature h3{
@@ -388,8 +302,6 @@ section{
 .feature p{
   color:var(--muted);
 }
-
-/* ================= COURSES ================= */
 
 .courses{
   background:var(--navy);
@@ -426,45 +338,11 @@ section{
   border-radius:18px;
   padding:30px;
   min-height:245px;
-  animation:softAppear .7s ease both;
-  transition:.4s ease;
-}
-
-.course:nth-child(2){
-  animation-delay:.08s;
-}
-
-.course:nth-child(3){
-  animation-delay:.16s;
-}
-
-.course:nth-child(4){
-  animation-delay:.24s;
-}
-
-.course:nth-child(5){
-  animation-delay:.32s;
-}
-
-.course:nth-child(6){
-  animation-delay:.40s;
-}
-
-.course:hover{
-  transform:translateY(-9px);
-  background:#174776;
-  border-color:var(--gold);
-  box-shadow:0 18px 35px rgba(0,0,0,.22);
 }
 
 .course .icon{
   font-size:45px;
   margin-bottom:12px;
-  transition:.4s ease;
-}
-
-.course:hover .icon{
-  transform:scale(1.12) translateY(-3px);
 }
 
 .course h3{
@@ -481,14 +359,7 @@ section{
   color:#f1c84b;
   font-weight:800;
   font-size:17px;
-  transition:.3s ease;
 }
-
-.learn:hover{
-  letter-spacing:.5px;
-}
-
-/* ================= TEACHERS ================= */
 
 .teachers{
   background:#f7f8fb;
@@ -506,17 +377,6 @@ section{
   padding:38px;
   text-align:center;
   box-shadow:0 7px 25px rgba(12,34,56,.06);
-  animation:softAppear .8s ease both;
-  transition:.4s ease;
-}
-
-.teacher:nth-child(2){
-  animation-delay:.15s;
-}
-
-.teacher:hover{
-  transform:translateY(-9px);
-  box-shadow:0 20px 40px rgba(12,34,56,.12);
 }
 
 .teacher-avatar{
@@ -529,12 +389,6 @@ section{
   justify-content:center;
   margin:0 auto 20px;
   font-size:65px;
-  transition:.4s ease;
-}
-
-.teacher:hover .teacher-avatar{
-  transform:scale(1.08);
-  box-shadow:0 10px 25px rgba(8,37,70,.2);
 }
 
 .teacher h3{
@@ -552,8 +406,6 @@ section{
   color:#697586;
   font-size:16px;
 }
-
-/* ================= CONTACT ================= */
 
 .contact{
   background:linear-gradient(
@@ -587,32 +439,23 @@ section{
   margin:13px 0;
 }
 
-/* IMPORTANT CONTACT FORM */
+/* CONTACT FORM */
 
 .form{
-  background:#ffffff;
+  background:#fff;
   color:var(--text);
   border-radius:22px;
   padding:32px;
   box-shadow:0 18px 45px rgba(0,0,0,.22);
   border:1px solid rgba(217,165,43,.35);
-  animation:softAppear .8s .15s ease both;
-  transition:.4s ease;
-  position:relative;
-  z-index:2;
 }
 
-.form:hover{
-  transform:translateY(-5px);
-  box-shadow:0 25px 55px rgba(0,0,0,.28);
-}
-
-.form label{
+label{
   display:block;
-  color:#12243a;
-  font-weight:700;
   font-size:17px;
   margin:0 0 8px;
+  color:var(--text);
+  font-weight:700;
 }
 
 input,
@@ -625,13 +468,7 @@ textarea{
   margin-bottom:18px;
   outline:none;
   background:#fff;
-  color:#12243a;
-  transition:.3s ease;
-}
-
-input::placeholder,
-textarea::placeholder{
-  color:#8a95a3;
+  color:var(--text);
 }
 
 input:focus,
@@ -649,14 +486,6 @@ textarea{
   width:100%;
   border:0;
   cursor:pointer;
-  background:var(--gold);
-  color:#071d35;
-  font-weight:800;
-}
-
-.send:hover{
-  background:var(--gold2);
-  transform:translateY(-3px);
 }
 
 .btn-call{
@@ -666,7 +495,19 @@ textarea{
   color:#071d35;
 }
 
-/* ================= FOOTER ================= */
+/* WHATSAPP BUTTON */
+
+.whatsapp-btn{
+  display:inline-block;
+  margin-top:15px;
+  margin-left:8px;
+  background:#25D366;
+  color:#fff;
+}
+
+.whatsapp-btn:hover{
+  background:#20bd5a;
+}
 
 footer{
   background:#041a31;
@@ -683,83 +524,6 @@ footer p{
   color:#b9c6d5;
   margin-top:7px;
 }
-
-/* ================= ANIMATIONS ================= */
-
-@keyframes navDown{
-  from{
-    opacity:0;
-    transform:translateY(-20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes heroLeft{
-  from{
-    opacity:0;
-    transform:translateX(-30px);
-  }
-  to{
-    opacity:1;
-    transform:translateX(0);
-  }
-}
-
-@keyframes heroRight{
-  from{
-    opacity:0;
-    transform:translateX(30px);
-  }
-  to{
-    opacity:1;
-    transform:translateX(0);
-  }
-}
-
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes softAppear{
-  from{
-    opacity:0;
-    transform:translateY(18px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes iconFloat{
-  0%,100%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(-7px);
-  }
-}
-
-@keyframes floatSoft{
-  0%,100%{
-    transform:translate(0,0);
-  }
-  50%{
-    transform:translate(-15px,15px);
-  }
-}
-
-/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
@@ -799,7 +563,11 @@ footer p{
   }
 
   .hero-card{
-    margin-top:10px;
+    display:none;
+  }
+
+  .whatsapp-btn{
+    margin-left:0;
   }
 }
 
@@ -841,33 +609,9 @@ footer p{
     font-size:34px;
   }
 
-  .hero-card{
-    padding:30px;
-  }
-
-  .hero-card .big-icon{
-    font-size:65px;
-  }
-
-  .contact h2{
-    font-size:43px;
-  }
-
   .form{
     padding:24px;
   }
-}
-
-@media(prefers-reduced-motion:reduce){
-
-  *,
-  *::before,
-  *::after{
-    animation-duration:.01ms !important;
-    transition-duration:.01ms !important;
-    scroll-behavior:auto !important;
-  }
-
 }
 </style>
 </head>
@@ -878,9 +622,7 @@ footer p{
 
   <div class="brand">
 
-    <div class="logo">
-      FF
-    </div>
+    <div class="logo">FF</div>
 
     <div>
 
@@ -1330,4 +1072,222 @@ footer p{
 </section>
 
 
-<section class="
+<section class="contact" id="contact">
+
+  <div class="container contact-grid">
+
+    <div>
+
+      <span class="section-label">
+        GET IN TOUCH
+      </span>
+
+      <h2>
+        Start Your<br>
+        English Journey
+      </h2>
+
+      <p class="contact-info">
+        Ready to improve your English?
+        Send your details and the academy can contact
+        you about courses, fees and class timings.
+      </p>
+
+
+      <div class="contact-info" style="margin-top:24px">
+
+        <div>
+          <strong>Phone:</strong>
+          +923165537432
+        </div>
+
+        <div>
+          <strong>WhatsApp:</strong>
+          +923165537432
+        </div>
+
+        <div>
+          <strong>Email:</strong>
+          info@fluentfutureacademy.com
+        </div>
+
+        <div>
+          <strong>Location:</strong>
+          Karachi, Pakistan
+        </div>
+
+      </div>
+
+
+      <!-- CALL BUTTON -->
+
+      <a
+        href="tel:+923165537432"
+        class="btn btn-call"
+      >
+        📞 Call Now
+      </a>
+
+
+      <!-- WHATSAPP BUTTON -->
+
+      <a
+        href="https://wa.me/923165537432"
+        target="_blank"
+        class="btn whatsapp-btn"
+      >
+        💬 WhatsApp
+      </a>
+
+    </div>
+
+
+    <!-- WHATSAPP ENQUIRY FORM -->
+
+    <form
+      class="form"
+      id="enquiryForm"
+    >
+
+      <label for="name">
+        Name
+      </label>
+
+      <input
+        id="name"
+        type="text"
+        placeholder="Your name"
+        required
+      >
+
+
+      <label for="phone">
+        Phone / WhatsApp
+      </label>
+
+      <input
+        id="phone"
+        type="tel"
+        placeholder="+92..."
+        required
+      >
+
+
+      <label for="course">
+        Course
+      </label>
+
+      <input
+        id="course"
+        type="text"
+        placeholder="Spoken English / IELTS / Grammar"
+      >
+
+
+      <label for="message">
+        Message
+      </label>
+
+      <textarea
+        id="message"
+        placeholder="Tell us what you want to learn"
+      ></textarea>
+
+
+      <button
+        class="btn btn-gold send"
+        type="submit"
+      >
+        💬 Send Enquiry
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <strong>
+    Fluent Future English Academy
+  </strong>
+
+  <p>
+    Learn Today · Lead Tomorrow
+  </p>
+
+  <p>
+    © 2026 Fluent Future English Academy.
+    All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const form =
+    document.getElementById("enquiryForm");
+
+  form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const phone =
+      document.getElementById("phone").value.trim();
+
+    const course =
+      document.getElementById("course").value.trim();
+
+    const message =
+      document.getElementById("message").value.trim();
+
+    if(!name || !phone){
+
+      alert(
+        "Please enter your name and phone number."
+      );
+
+      return;
+    }
+
+    const whatsappMessage =
+      "Assalamualaikum, I want to enquire about Fluent Future English Academy." +
+      "\n\n" +
+      "Name: " + name +
+      "\n" +
+      "Phone: " + phone +
+      "\n" +
+      "Course: " +
+      (course || "Not specified") +
+      "\n" +
+      "Message: " +
+      (message || "No message");
+
+    const whatsappNumber =
+      "923165537432";
+
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(whatsappMessage);
+
+    window.location.href =
+      whatsappURL;
+
+  });
+
+});
+
+</script>
+
+</body>
+ </html>
