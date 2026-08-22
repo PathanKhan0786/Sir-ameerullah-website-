@@ -11,6 +11,7 @@
   --navy:#082546;
   --navy2:#123d6b;
   --gold:#d9a52b;
+  --gold2:#edbc3a;
   --text:#12243a;
   --muted:#697586;
   --light:#f6f8fb;
@@ -40,7 +41,7 @@ a{
   color:inherit;
 }
 
-/* TOP BAR */
+/* ================= TOP BAR ================= */
 
 .topbar{
   position:sticky;
@@ -95,7 +96,7 @@ a{
   margin-top:5px;
 }
 
-/* SECTIONS */
+/* ================= GENERAL ================= */
 
 section{
   padding:78px 20px;
@@ -106,7 +107,24 @@ section{
   margin:auto;
 }
 
-/* HERO */
+.section-label{
+  color:#c79a28;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-size:16px;
+}
+
+.section-title{
+  font-family:Georgia,serif;
+  font-weight:700;
+  color:var(--navy);
+  font-size:58px;
+  line-height:1.1;
+  margin:10px 0 25px;
+}
+
+/* ================= HERO ================= */
 
 .hero{
   min-height:680px;
@@ -154,14 +172,10 @@ section{
   margin-bottom:4px;
 }
 
-.hero h2,
-.section-title{
+.hero h2{
   font-family:Georgia,serif;
   font-weight:700;
   color:var(--navy);
-}
-
-.hero h2{
   font-size:64px;
   line-height:1.05;
   margin-bottom:25px;
@@ -212,7 +226,7 @@ section{
 }
 
 .btn-gold:hover{
-  background:#edbc3a;
+  background:var(--gold2);
 }
 
 .hero-card{
@@ -247,7 +261,49 @@ section{
   font-size:18px;
 }
 
-/* STATS */
+/* ================= ABOUT ================= */
+
+.about{
+  background:#fff;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.about p{
+  font-size:19px;
+  color:var(--muted);
+}
+
+.mission{
+  background:var(--light);
+  border-left:7px solid var(--gold);
+  border-radius:0 25px 25px 0;
+  padding:40px;
+  animation:softAppear .8s .25s ease both;
+  transition:.4s ease;
+}
+
+.mission:hover{
+  transform:translateX(6px);
+  box-shadow:0 15px 35px rgba(8,37,70,.08);
+}
+
+.mission h3{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.mission p{
+  font-size:19px;
+  color:#334155;
+}
+
+/* ================= STATS ================= */
 
 .stats{
   display:grid;
@@ -282,63 +338,7 @@ section{
   font-size:16px;
 }
 
-/* ABOUT */
-
-.about{
-  background:#fff;
-}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
-}
-
-.section-label{
-  color:#c79a28;
-  font-weight:800;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-size:16px;
-}
-
-.section-title{
-  font-size:58px;
-  line-height:1.1;
-  margin:10px 0 25px;
-}
-
-.about p{
-  font-size:19px;
-  color:var(--muted);
-}
-
-.mission{
-  background:var(--light);
-  border-left:7px solid var(--gold);
-  border-radius:0 25px 25px 0;
-  padding:40px;
-  animation:softAppear .8s .25s ease both;
-  transition:.4s ease;
-}
-
-.mission:hover{
-  transform:translateX(6px);
-  box-shadow:0 15px 35px rgba(8,37,70,.08);
-}
-
-.mission h3{
-  font-size:32px;
-  margin-bottom:15px;
-}
-
-.mission p{
-  font-size:19px;
-  color:#334155;
-}
-
-/* FEATURES */
+/* ================= FEATURES ================= */
 
 .features{
   padding-top:20px;
@@ -389,7 +389,7 @@ section{
   color:var(--muted);
 }
 
-/* COURSES */
+/* ================= COURSES ================= */
 
 .courses{
   background:var(--navy);
@@ -430,11 +430,25 @@ section{
   transition:.4s ease;
 }
 
-.course:nth-child(2){animation-delay:.08s}
-.course:nth-child(3){animation-delay:.16s}
-.course:nth-child(4){animation-delay:.24s}
-.course:nth-child(5){animation-delay:.32s}
-.course:nth-child(6){animation-delay:.40s}
+.course:nth-child(2){
+  animation-delay:.08s;
+}
+
+.course:nth-child(3){
+  animation-delay:.16s;
+}
+
+.course:nth-child(4){
+  animation-delay:.24s;
+}
+
+.course:nth-child(5){
+  animation-delay:.32s;
+}
+
+.course:nth-child(6){
+  animation-delay:.40s;
+}
 
 .course:hover{
   transform:translateY(-9px);
@@ -474,7 +488,7 @@ section{
   letter-spacing:.5px;
 }
 
-/* TEACHERS */
+/* ================= TEACHERS ================= */
 
 .teachers{
   background:#f7f8fb;
@@ -539,7 +553,7 @@ section{
   font-size:16px;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 
 .contact{
   background:linear-gradient(
@@ -573,22 +587,30 @@ section{
   margin:13px 0;
 }
 
+/* IMPORTANT CONTACT FORM */
+
 .form{
-  background:#fff;
+  background:#ffffff;
   color:var(--text);
   border-radius:22px;
   padding:32px;
+  box-shadow:0 18px 45px rgba(0,0,0,.22);
+  border:1px solid rgba(217,165,43,.35);
   animation:softAppear .8s .15s ease both;
   transition:.4s ease;
+  position:relative;
+  z-index:2;
 }
 
 .form:hover{
   transform:translateY(-5px);
-  box-shadow:0 20px 45px rgba(0,0,0,.2);
+  box-shadow:0 25px 55px rgba(0,0,0,.28);
 }
 
-label{
+.form label{
   display:block;
+  color:#12243a;
+  font-weight:700;
   font-size:17px;
   margin:0 0 8px;
 }
@@ -602,7 +624,14 @@ textarea{
   font-size:16px;
   margin-bottom:18px;
   outline:none;
+  background:#fff;
+  color:#12243a;
   transition:.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#8a95a3;
 }
 
 input:focus,
@@ -620,6 +649,14 @@ textarea{
   width:100%;
   border:0;
   cursor:pointer;
+  background:var(--gold);
+  color:#071d35;
+  font-weight:800;
+}
+
+.send:hover{
+  background:var(--gold2);
+  transform:translateY(-3px);
 }
 
 .btn-call{
@@ -629,7 +666,7 @@ textarea{
   color:#071d35;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
   background:#041a31;
@@ -647,7 +684,7 @@ footer p{
   margin-top:7px;
 }
 
-/* ANIMATIONS */
+/* ================= ANIMATIONS ================= */
 
 @keyframes navDown{
   from{
@@ -722,7 +759,7 @@ footer p{
   }
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
@@ -815,9 +852,11 @@ footer p{
   .contact h2{
     font-size:43px;
   }
-}
 
-/* REDUCE MOTION */
+  .form{
+    padding:24px;
+  }
+}
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1291,61 +1330,4 @@ footer p{
 </section>
 
 
-<section class="contact" id="contact">
-
-  <div class="container contact-grid">
-
-    <div>
-
-      <span class="section-label">
-        GET IN TOUCH
-      </span>
-
-      <h2>
-        Start Your<br>
-        English Journey
-      </h2>
-
-      <p class="contact-info">
-        Ready to improve your English?
-        Send your details and the academy can contact
-        you about courses, fees and class timings.
-      </p>
-
-
-      <div class="contact-info" style="margin-top:24px">
-
-        <div>
-          <strong>Phone:</strong>
-          +923165537432
-        </div>
-
-        <div>
-          <strong>Email:</strong>
-          info@fluentfutureacademy.com
-        </div>
-
-        <div>
-          <strong>Location:</strong>
-          Karachi, Pakistan
-        </div>
-
-      </div>
-
-
-      <a
-        href="tel:+923165537432"
-        class="btn btn-call"
-      >
-        📞 Call Now
-      </a>
-
-    </div>
-
-
-    <form
-      class="form"
-      id="enquiryForm"
-    >
-
-      <label fo
+<section class="
